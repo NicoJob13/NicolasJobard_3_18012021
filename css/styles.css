@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+body {
+  font-family: "Shrikhand", "Roboto", sans-serif;
+  margin: 0;
+}
+
+.container {
+  min-width: 320px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+h1, h2, h3, .logo {
+  font: "Shrikhand", sans-serif;
+}
+
+p, span {
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  padding: 0 2rem;
+  border-bottom: 2px solid #dadada;
+  align-content: flex-end;
+}
+
+.header {
+  height: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-content: flex-end;
+}
+
+.logo {
+  grid-column: 2/2;
+  justify-self: center;
+}
+
+footer {
+  padding: 1rem 2rem 2rem 2rem;
+  background-color: black;
+}
+footer .footerContainer, footer .footerLink {
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.7rem;
+}
+footer .footerLink {
+  flex-direction: row;
+  display: grid;
+  grid-template-columns: 20px auto;
+  column-gap: 0.5rem;
+}
+
+/*# sourceMappingURL=styles.css.map */
