@@ -2,21 +2,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 body {
   font-family: "Shrikhand", "Roboto", sans-serif;
+  background-color: whitesmoke;
   margin: 0;
 }
 
 .container {
-  min-width: 320px;
   max-width: 1440px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
-h1, h2, h3, .logo {
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+h1, h2, h3 {
   font: "Shrikhand", sans-serif;
+  margin: 0;
 }
 
-p, span {
+h1, h2 {
+  padding-bottom: 1rem;
+}
+
+p, span, img {
   font-family: "Roboto", sans-serif;
+  font-size: 1rem;
 }
 
 a {
@@ -24,14 +43,37 @@ a {
   color: black;
 }
 
-header {
-  padding: 0 2rem;
-  border-bottom: 2px solid #dadada;
-  align-content: flex-end;
+.button {
+  height: 3rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button.geoButton {
+  width: 3rem;
+  background-color: #bebebe;
+  margin-right: 0.5rem;
+  font-size: 1.3rem;
+}
+.button.searchButton {
+  background: linear-gradient(to bottom right, #ff79da, 45%, #9356dc);
+  color: whitesmoke;
+  box-shadow: 0 0.1rem 0.4rem 0.1rem #bebebe;
+}
+.button:hover {
+  cursor: pointer;
+  filter: brightness(110%);
+  box-shadow: 0 0.1rem 0.4rem 0.1rem #808080;
 }
 
 .header {
-  height: 4rem;
+  height: 5rem;
+  padding: 0.5rem 1rem;
+  background-color: white;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-content: flex-end;
@@ -42,21 +84,201 @@ header {
   justify-self: center;
 }
 
-footer {
-  padding: 1rem 2rem 2rem 2rem;
+.searchZone {
+  background-color: #e4e4e4;
+}
+
+.location {
+  height: 4rem;
+  background-color: #bebebe;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.locationSearchBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.locationInput {
+  height: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #bebebe;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.searchSubmission {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: Roboto;
+}
+.searchSubmission h2 {
+  font-size: 1.1rem;
+  font-weight: normal;
+}
+
+.operationInfo {
+  background-color: white;
+  padding: 2rem 1rem;
+}
+.operationInfo h2 {
+  font-family: Roboto;
+}
+
+.processCardGroup {
+  padding: 0 0.5rem;
+  display: grid;
+  row-gap: 1.5rem;
+}
+@media screen and (min-width: 800px) {
+  .processCardGroup {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3rem;
+  }
+}
+
+.processCard {
+  height: 4rem;
+  background-color: #e4e4e4;
+  border-radius: 1rem;
+  box-shadow: 0 0.1rem 0.4rem 0.1rem #bebebe;
+  display: flex;
+  align-items: center;
+}
+.processCard:hover {
+  background-color: #e9ddf8;
+  cursor: pointer;
+}
+.processCard:hover .processIcon {
+  color: #9356dc;
+}
+
+.processStep {
+  margin-right: 1.5rem;
+  margin-left: -0.9rem;
+  height: 1.8rem;
+  width: 1.8rem;
+  border-radius: 3rem;
+  color: whitesmoke;
+  background-color: #9356dc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.processIcon {
+  margin-right: 1.5rem;
+  color: #808080;
+}
+
+.processText {
+  font-weight: 500;
+}
+
+.searchResults {
+  background-color: #e4e4e4;
+  padding: 2rem 1rem;
+}
+.searchResults h2 {
+  font-family: Roboto;
+}
+.searchResults .cardGroup {
+  display: grid;
+  row-gap: 2rem;
+}
+@media screen and (min-width: 800px) {
+  .searchResults .cardGroup {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .searchResults .cardGroup {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 1.5rem;
+  }
+}
+
+.card {
+  height: 15rem;
+  width: calc(max-width - 4rem);
+  background-color: whitesmoke;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0.1rem 0.4rem 0.1rem #bebebe;
+}
+@media screen and (min-width: 800px) {
+  .card {
+    height: 20rem;
+  }
+}
+
+.cardPicture {
+  min-height: 0;
+  height: 11rem;
+  min-width: 0;
+  width: 100%;
+  border-radius: 1rem 1rem 0 0;
+  display: flex;
+  object-fit: cover;
+  object-position: 0% 62%;
+}
+@media screen and (min-width: 800px) {
+  .cardPicture {
+    height: 16rem;
+  }
+}
+
+.cardText {
+  height: 4rem;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cardText h3 {
+  font-family: Roboto;
+}
+
+.cardTitle {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardIcon:hover {
+  cursor: pointer;
+}
+
+.footer {
+  padding: 2rem 1rem;
+  color: whitesmoke;
   background-color: black;
 }
-footer .footerContainer, footer .footerLink {
+
+.footerLink {
   color: whitesmoke;
   display: flex;
   flex-direction: column;
   line-height: 1.7rem;
 }
-footer .footerLink {
+
+.footerLink {
   flex-direction: row;
-  display: grid;
-  grid-template-columns: 20px auto;
-  column-gap: 0.5rem;
+}
+
+.footerLinkIcon {
+  width: 20px;
+  padding-right: 0.5rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

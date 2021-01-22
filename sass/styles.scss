@@ -2,25 +2,51 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-$border: #dadada;
+$primary: #9356dc;
+$secondary: #ff79da;
+$tertiary: #99e2d0;
+$grey: #bebebe;
+$lightGrey: #e4e4e4;
+$darkGrey: #808080;
+
+$sectionPadding : 2rem 1rem;
 
 body {
     font-family: 'Shrikhand', 'Roboto', sans-serif;
+    background-color: whitesmoke;
     margin: 0;
 }
 
 .container {
-    min-width: 320px;
     max-width: 1440px;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
-h1, h2, h3, .logo {
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+}
+
+h1, h2, h3 {
     font: 'Shrikhand', sans-serif;
+    margin: 0;
 }
 
-p, span {
+h1, h2 {
+    padding-bottom: 1rem;
+}
+
+p, span, img {
     font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
 }
 
 a {
@@ -28,14 +54,37 @@ a {
     color: black;
 }
 
-header {
-    padding: 0 2rem;
-    border-bottom: 2px solid $border;
-    align-content: flex-end;
+.button {
+    height: 3rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 2rem;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.geoButton {
+        width: 3rem;
+        background-color: $grey;
+        margin-right: .5rem;
+        font-size: 1.3rem;
+    }
+    &.searchButton {
+        background: linear-gradient(to bottom right, $secondary, 45%, $primary);
+        color: whitesmoke;
+        box-shadow: 0 .1rem .4rem .1rem $grey;
+    }
+    &:hover {
+    cursor: pointer;
+    filter: brightness(110%);
+    box-shadow: 0 .1rem .4rem .1rem $darkGrey;
+    }
 }
 
 .header {
-    height: 4rem;
+    height: 5rem;
+    padding: .5rem 1rem;
+    background-color: white;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-content: flex-end;
@@ -46,19 +95,189 @@ header {
     justify-self: center;
 }
 
-footer {
-    padding: 1rem 2rem 2rem 2rem;
-    background-color: black;
-    .footerContainer, .footerLink {
-        color: whitesmoke;
-        display: flex;
-        flex-direction: column;
-        line-height: 1.7rem;
+.searchZone {
+    background-color: $lightGrey;
+}
+
+.location {
+    height: 4rem;
+    background-color: $grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.locationSearchBar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.locationInput {
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $grey;
+    border: none;
+    font-size: .9rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.searchSubmission {
+    padding: $sectionPadding;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: Roboto;
+    h2 {
+        font-size: 1.1rem;
+        font-weight: normal;
     }
-    .footerLink {
-        flex-direction: row;
+}
+
+.operationInfo {
+    background-color: white;
+    padding: $sectionPadding;
+    h2 {
+        font-family: Roboto;
+    }
+}
+
+.processCardGroup {
+    padding: 0 .5rem;
+    display: grid;
+    row-gap: 1.5rem;
+    @media screen and (min-width: 800px) {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 3rem;
+    }
+}
+
+.processCard {
+    height: 4rem;
+    background-color: $lightGrey;
+    border-radius: 1rem;
+    box-shadow: 0 .1rem .4rem .1rem $grey;
+    display: flex;
+    align-items: center;
+    &:hover {
+        background-color: lighten($primary, 32%);
+        cursor: pointer;
+        .processIcon {
+            color: $primary;
+        }
+    }
+}
+
+.processStep {
+    margin-right: 1.5rem;
+    margin-left: -.9rem;
+    height: 1.8rem;
+    width: 1.8rem;
+    border-radius: 3rem;
+    color: whitesmoke;
+    background-color: $primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.processIcon {
+    margin-right: 1.5rem;
+    color: $darkGrey;
+}
+
+.processText {
+    font-weight: 500;
+}
+
+.searchResults {
+    background-color: $lightGrey;
+    padding: $sectionPadding;
+    h2 {
+        font-family: Roboto;
+    }
+    .cardGroup {
         display: grid;
-        grid-template-columns: 20px auto;
-        column-gap: .5rem;
+        row-gap: 2rem;
+        @media screen and (min-width: 800px) {
+            grid-template-columns: 1fr 1fr;
+            column-gap: 2rem;
+        }
+        @media screen and (min-width: 1280px) {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            column-gap: 1.5rem;
+        }
     }
+}
+
+.card {
+    height: 15rem;
+    width: calc(max-width - 4rem);
+    background-color: whitesmoke;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 .1rem .4rem .1rem $grey;
+    @media screen and (min-width: 800px) {
+        height: 20rem;
+    }
+}
+
+.cardPicture {
+    min-height: 0;
+    height: 11rem;
+    min-width: 0;
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+    display: flex;
+    object-fit: cover;
+    object-position: 0% 62%;
+    @media screen and (min-width: 800px) {
+        height: 16rem;
+    }
+}
+
+.cardText {
+    height: 4rem;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h3 {
+        font-family: Roboto;
+    }
+}
+
+.cardTitle {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardIcon:hover {
+    cursor: pointer;
+}
+
+.footer {
+    padding: $sectionPadding;
+    color: whitesmoke;
+    background-color: black;
+}
+
+.footerLink {
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.7rem;
+}
+
+.footerLink {
+    flex-direction: row;
+}
+
+.footerLinkIcon {
+    width: 20px;
+    padding-right: .5rem;
 }
