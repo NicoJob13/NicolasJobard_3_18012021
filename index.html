@@ -5,19 +5,24 @@
         <meta charset="utf-8">
         <meta name="description" content="Réservation de menus de qualité supérieure">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/styles.css">
 		<script src="https://kit.fontawesome.com/1ff953b2ad.js" crossorigin="anonymous"></script>
     </head>
     <body>
+        <div class="load">
+            <div class="loadingSpinner">
+                <img class="loadingSpinnerImg" src="images/logo/ohmyfood@2x.svg" alt="">
+            </div>
+        </div>
         <header>
-            <div class="container header">
+            <div class="header">
                 <div class="logo">
                     <img src="images/logo/ohmyfood@2x.svg" alt="Logo représentant le nom Ohmyfood écrit en caractères arrondis" class="logo">
                 </div>
             </div>
         </header>
         <main>
-            <section class="container searchZone">
+            <section class="searchZone">
                 <div class="location">
                     <button class="button geoButton"><i class="fas fa-map-marker-alt geoLocationIcon"></i></button>
                     <input type="search" name="location" id="location" class="locationInput" placeholder="Paris, Belleville">
@@ -28,118 +33,138 @@
                     <button class="button searchButton">Explorer nos restaurants</button>
                 </div>
             </section>
-            <section class="container operationInfo">
-                <h2>Fontionnement</h2>
-                <div class="processCardGroup">
-                    <div class="processCard">
-                        <span class="processStep">1</span>
-                        <span><i class="fas fa-mobile-alt processIcon"></i></span>
-                        <span class="processText">Choisissez un restaurant</span>
-                    </div>
-                    <div class="processCard">
-                        <span class="processStep">2</span>
-                        <span><i class="fas fa-list-ul processIcon"></i></span>
-                        <span class="processText">Composez votre menu</span>
-                    </div>
-                    <div class="processCard">
-                        <span class="processStep">3</span>
-                        <span><i class="fas fa-store processIcon"></i></span>
-                        <span class="processText">Dégustez au restaurant</span>
+            <section class="operationInfo">
+                <div class="container">
+                    <h2>Fontionnement</h2>
+                    <div class="processCardGroup">
+                        <div class="processCard">
+                            <span class="processStep">1</span>
+                            <span><i class="fas fa-mobile-alt processIcon"></i></span>
+                            <span class="processText">Choisissez un restaurant</span>
+                        </div>
+                        <div class="processCard">
+                            <span class="processStep">2</span>
+                            <span><i class="fas fa-list-ul processIcon"></i></span>
+                            <span class="processText">Composez votre menu</span>
+                        </div>
+                        <div class="processCard">
+                            <span class="processStep">3</span>
+                            <span><i class="fas fa-store processIcon"></i></span>
+                            <span class="processText">Dégustez au restaurant</span>
+                        </div>
                     </div>
                 </div>
             </section>
-            <section class="container searchResults">
-                <h2>Restaurants</h2>
-                <div class="cardGroup">
-                    <a href="menus/lapalettedugout.html">
-                    <article class="card">
-                        <img class="cardPicture cardPicture1" src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="photographie d'une assiette ronde et blanche contenant une salade posée sur des lamelles de saumon et surmontée d'une noix de saint-jacques, avec un verre de vin blanc et une panière de pain">
-                        <div class="cardText">
-                            <div class="CardTitle">
-                                <h3>La palette du goût</h3>
-                                <span>Ménilmontant</span>
+            <section class="searchResults">
+                <div class="container">
+                    <h2>Restaurants</h2>
+                    <div class="cardGroup">
+                        <a href="menus/lapalettedugout.html">
+                        <article class="card">
+                            <div class="cardPictureContainer">
+                                <img class="cardPicture cardPicture1" src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="photographie d'une assiette ronde et blanche contenant une salade posée sur des lamelles de saumon et surmontée d'une noix de saint-jacques, avec un verre de vin blanc et une panière de pain">
+                                <span class="newSticker">Nouveau</span>
                             </div>
-                            <div class="cardIcon">
-                                <i class="far fa-heart"></i>
+                            <div class="cardText">
+                                <div class="CardTitle">
+                                    <h3>La palette du goût</h3>
+                                    <span>Ménilmontant</span>
+                                </div>
+                                <div class="cardIcon">
+                                    <i class="far fa-heart cardIconEmpty"></i>
+                                    <i class="fa-2x fas fa-heart cardIconFull"></i>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                    </a>
-                    <a href="menus/lanoteenchantee.html">
-                    <article class="card">
-                        <img class="cardPicture cardPicture2" src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="photographie d'une assiette ronde et blanche contenant une poêlée de lamelles de sèches et supions, accompagnée d'une purée de poivrons, d'olives et de deux beignets en forme de boule">
-                        <div class="cardText">
-                            <div class="CardTitle">
-                                <h3>La note enchantée</h3>
-                                <span>Charonne</span>
+                        </article>
+                        </a>
+                        <a href="menus/lanoteenchantee.html">
+                        <article class="card">
+                            <div class="cardPictureContainer">
+                                <img class="cardPicture cardPicture2" src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="photographie d'une assiette ronde et blanche contenant une poêlée de lamelles de sèches et supions, accompagnée d'une purée de poivrons, d'olives et de deux beignets en forme de boule">
+                                <span class="newSticker">Nouveau</span>
                             </div>
-                            <div class="cardIcon">
-                                <i class="far fa-heart"></i>
+                            <div class="cardText">
+                                <div class="CardTitle">
+                                    <h3>La note enchantée</h3>
+                                    <span>Charonne</span>
+                                </div>
+                                <div class="cardIcon">
+                                    <i class="far fa-heart cardIconEmpty"></i>
+                                    <i class="fa-2x fas fa-heart cardIconFull"></i>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                    </a>
-                    <a href="menus/alafrancaise.html">
-                    <article class="card">
-                        <img class="cardPicture cardPicture3" src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="photographie d'une assiette ronde et blanche contenant une galette croustillante recouverte de feuilles d'épinard surmontées de deux oeufs pochés">
-                        <div class="cardText">
-                            <div class="CardTitle">
-                                <h3>A la française</h3>
-                                <span>Cité Rouge</span>
+                        </article>
+                        </a>
+                        <a href="menus/alafrancaise.html">
+                        <article class="card">
+                            <div class="cardPictureContainer">
+                                <img class="cardPicture cardPicture3" src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="photographie d'une assiette ronde et blanche contenant une galette croustillante recouverte de feuilles d'épinard surmontées de deux oeufs pochés">
                             </div>
-                            <div class="cardIcon">
-                                <i class="far fa-heart"></i>
+                            <div class="cardText">
+                                <div class="CardTitle">
+                                    <h3>A la française</h3>
+                                    <span>Cité Rouge</span>
+                                </div>
+                                <div class="cardIcon">
+                                    <i class="far fa-heart cardIconEmpty"></i>
+                                    <i class="fa-2x fas fa-heart cardIconFull"></i>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                    </a>
-                    <a href="menus/ledelicedessens.html">
-                    <article class="card">
-                        <img class="cardPicture cardPicture4" src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="photographie d'une assiette rectangulaire blanche aux bords gris, contenant un filet de poisson accompagné de petits légumes du soleil">
-                        <div class="cardText">
-                            <div class="CardTitle">
-                                <h3>Le délice des sens</h3>
-                                <span>Folie-Méricourt</span>
+                        </article>
+                        </a>
+                        <a href="menus/ledelicedessens.html">
+                        <article class="card">
+                            <div class="cardPictureContainer">
+                                <img class="cardPicture cardPicture4" src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="photographie d'une assiette rectangulaire blanche aux bords gris, contenant un filet de poisson accompagné de petits légumes du soleil">
                             </div>
-                            <div class="cardIcon">
-                                <i class="far fa-heart"></i>
+                            <div class="cardText">
+                                <div class="CardTitle">
+                                    <h3>Le délice des sens</h3>
+                                    <span>Folie-Méricourt</span>
+                                </div>
+                                <div class="cardIcon">
+                                    <i class="far fa-heart cardIconEmpty"></i>
+                                    <i class="fa-2x fas fa-heart cardIconFull"></i>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                    </a>
+                        </article>
+                        </a>
+                    </div>
                 </div>
             </section>
         </main>
         <footer>
-            <section class="footer container">
-                <h2>Ohmyfood</h2>
-                <div>
-                    <a class="footerLink" href="#">
-                        <span class="footerLinkIcon">
-                            <i class="fas fa-utensils"></i>
-                        </span>
-                        <span>
-                            Proposer un restaurant
-                        </span>
-                    </a>
-                    <a class="footerLink" href="#">
-                        <span class="footerLinkIcon">
-                            <i class="fas fa-hands-helping"></i>
-                        </span>
-                        <span>
-                            Devenir partenaire
-                        </span>
-                    </a>
-                    <a class="footerLink" href="#">
-                        <span>
-                            Mentions légales
-                        </span>
-                    </a>
-                    <a class="footerLink" href="mailto:contact@ohmyfood.com">
-                        <span>
-                            Contact
-                        </span>
-                    </a>
+            <section class="footer">
+                <div class="container">
+                    <h2>Ohmyfood</h2>
+                    <div>
+                        <a class="footerLink" href="#">
+                            <span class="footerLinkIcon">
+                                <i class="fas fa-utensils"></i>
+                            </span>
+                            <span>
+                                Proposer un restaurant
+                            </span>
+                        </a>
+                        <a class="footerLink" href="#">
+                            <span class="footerLinkIcon">
+                                <i class="fas fa-hands-helping"></i>
+                            </span>
+                            <span>
+                                Devenir partenaire
+                            </span>
+                        </a>
+                        <a class="footerLink" href="#">
+                            <span>
+                                Mentions légales
+                            </span>
+                        </a>
+                        <a class="footerLink" href="mailto:contact@ohmyfood.com">
+                            <span>
+                                Contact
+                            </span>
+                        </a>
+                    </div>
                 </div>
             </section>
         </footer>

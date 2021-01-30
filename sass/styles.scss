@@ -5,21 +5,108 @@
 $primary: #9356dc;
 $secondary: #ff79da;
 $tertiary: #99e2d0;
-$grey: #bebebe;
-$lightGrey: #e4e4e4;
+$grey: #eaeaea;
+$lightGrey: #f6f6f6;
 $darkGrey: #808080;
+$loadingSpinnerBg: gainsboro;
 
 $sectionPadding : 2rem 1rem;
 
+@keyframes load {
+    0% {
+        opacity: 1;
+    }
+    75% {
+        opacity: .75;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.load {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: $grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: load 3000ms ease-in-out 1 forwards;
+}
+
+@keyframes spinner {
+    0% {
+        border-color: #9356DC;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    16.66% {
+        border-color: #9356DC;
+        opacity: 1;
+        transform: scale(1);
+    }
+    33.33% {
+        border-color: #9356DC;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    33.34% {
+        border-color: #FF79DA;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        border-color: #FF79DA;
+        opacity: 1;
+        transform: scale(1);
+    }
+    66.66% {
+        border-color: #FF79DA;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    66.67% {
+        border-color: #99E2D0;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    83.33% {
+        border-color: #99E2D0;
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        border-color: #99E2D0;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+.loadingSpinner {
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: 5px solid;
+    background-color: $loadingSpinnerBg;
+    animation: spinner 3s ease-in-out infinite;
+}
+
+.loadingSpinnerImg {
+    width: 90%;
+}
+
 body {
     font-family: 'Shrikhand', 'Roboto', sans-serif;
-    background-color: whitesmoke;
     margin: 0;
 }
 
 .container {
     max-width: 1440px;
-    margin: 0 auto;
+    margin: auto;
     box-sizing: border-box;
 }
 
@@ -63,6 +150,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: box-shadow 1500ms, filter 1500ms;
     &.geoButton {
         width: 3rem;
         background-color: $grey;
@@ -75,16 +163,18 @@ a {
         box-shadow: 0 .1rem .4rem .1rem $grey;
     }
     &:hover {
-    cursor: pointer;
-    filter: brightness(110%);
-    box-shadow: 0 .1rem .4rem .1rem $darkGrey;
+        cursor: pointer;
+        filter: brightness(110%);
+        box-shadow: 0 .1rem .4rem .1rem $darkGrey;
+    }
+    &:focus {
+        outline-style: none;
     }
 }
 
 .header {
     height: 5rem;
     padding: .5rem 1rem;
-    background-color: white;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-content: flex-end;
@@ -122,6 +212,10 @@ a {
     font-size: .9rem;
     font-weight: bold;
     text-align: center;
+    &:focus {
+        outline: solid 2px $darkGrey;
+        background-color: whitesmoke;
+    }
 }
 
 .searchSubmission {
@@ -138,7 +232,6 @@ a {
 }
 
 .operationInfo {
-    background-color: white;
     padding: $sectionPadding;
     h2 {
         font-family: Roboto;
@@ -162,9 +255,10 @@ a {
     box-shadow: 0 .1rem .4rem .1rem $grey;
     display: flex;
     align-items: center;
+    transition: background-color 1500ms, box-shadow 1500ms, filter 1500ms;
     &:hover {
         background-color: lighten($primary, 32%);
-        cursor: pointer;
+        box-shadow: 0 .1rem .4rem .1rem $darkGrey;
         .processIcon {
             color: $primary;
         }
@@ -226,18 +320,45 @@ a {
     }
 }
 
-.cardPicture {
-    min-height: 0;
+.cardPictureContainer {
+    position: relative;
     height: 11rem;
-    min-width: 0;
     width: 100%;
     border-radius: 1rem 1rem 0 0;
     display: flex;
-    object-fit: cover;
-    object-position: 0% 62%;
+    overflow: hidden;
     @media screen and (min-width: 800px) {
         height: 16rem;
     }
+}
+
+.cardPictureContainer:hover .cardPicture {
+  transform: scale(1.1);
+}
+
+.cardPicture {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: 1500ms;
+}
+
+.newSticker {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 4.9rem;
+    height: 1.6rem;
+    padding: .4rem;
+    background-color: $tertiary;
+    font-family: Roboto;
+    font-weight: 500;
+    color: darken($tertiary, 40%);
+    border-radius: .16rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 .cardText {
@@ -256,8 +377,25 @@ a {
     flex-direction: column;
 }
 
-.cardIcon:hover {
-    cursor: pointer;
+.cardIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardIconEmpty {
+    position: relative;
+    font-size: 1.9em;
+}
+
+.cardIconFull {
+    position: absolute;
+    color: transparent;
+    &:hover {
+        background: -webkit-linear-gradient($primary, $secondary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 }
 
 .footer {
