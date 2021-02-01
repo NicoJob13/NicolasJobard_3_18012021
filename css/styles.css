@@ -322,9 +322,14 @@ a {
   flex-direction: column;
   box-shadow: 0 0.1rem 0.4rem 0.1rem #eaeaea;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 500px) {
   .card {
     height: 20rem;
+  }
+}
+@media screen and (min-width: 750px) {
+  .card {
+    height: 22rem;
   }
 }
 
@@ -336,9 +341,14 @@ a {
   display: flex;
   overflow: hidden;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 500px) {
   .cardPictureContainer {
     height: 16rem;
+  }
+}
+@media screen and (min-width: 750px) {
+  .cardPictureContainer {
+    height: 18rem;
   }
 }
 
@@ -351,6 +361,29 @@ a {
   width: 100%;
   object-fit: cover;
   transition: 1000ms ease-out;
+}
+.cardPicture.cardPicture1 {
+  object-position: 0% 85%;
+}
+.cardPicture.cardPicture2 {
+  object-position: 0% 61%;
+}
+.cardPicture.cardPicture3 {
+  object-position: 0% 95%;
+}
+.cardPicture.cardPicture4 {
+  object-position: 0% 90%;
+}
+@media screen and (min-width: 1280px) {
+  .cardPicture.cardPicture1 {
+    object-position: 40% 85%;
+  }
+  .cardPicture.cardPicture3 {
+    object-position: 20% 95%;
+  }
+  .cardPicture.cardPicture4 {
+    object-position: 40% 90%;
+  }
 }
 
 .newSticker {
