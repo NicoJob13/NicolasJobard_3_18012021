@@ -12,6 +12,8 @@ $loadingSpinnerBg: gainsboro;
 
 $sectionPadding : 2rem 1rem;
 
+$transdur: 1000ms;
+
 @keyframes load {
     0% {
         opacity: 1;
@@ -27,8 +29,9 @@ $sectionPadding : 2rem 1rem;
 
 .load {
     position: absolute;
-    width: 100vw;
-    height: 100vh;
+    z-index: 9999;
+    height: 100%;
+    width: 100%;
     background-color: $grey;
     display: flex;
     justify-content: center;
@@ -99,6 +102,12 @@ $sectionPadding : 2rem 1rem;
     width: 90%;
 }
 
+.content {
+    position: relative;
+    z-index: 1;
+    display: block;
+}
+
 body {
     font-family: 'Shrikhand', 'Roboto', sans-serif;
     margin: 0;
@@ -150,7 +159,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: box-shadow 1500ms, filter 1500ms;
+    transition: box-shadow $transdur, filter $transdur;
     &.geoButton {
         width: 3rem;
         background-color: $grey;
@@ -177,7 +186,11 @@ a {
     padding: .5rem 1rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    align-content: flex-end;
+    align-content: center;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 0 0.5rem $darkGrey;
+    margin: 0;
 }
 
 .logo {
@@ -186,6 +199,8 @@ a {
 }
 
 .searchZone {
+    position: relative;
+    z-index: 2;
     background-color: $lightGrey;
 }
 
@@ -239,7 +254,7 @@ a {
 }
 
 .processCardGroup {
-    padding: 0 .5rem;
+    padding: 0 1rem;
     display: grid;
     row-gap: 1.5rem;
     @media screen and (min-width: 800px) {
@@ -255,10 +270,11 @@ a {
     box-shadow: 0 .1rem .4rem .1rem $grey;
     display: flex;
     align-items: center;
-    transition: background-color 1500ms, box-shadow 1500ms, filter 1500ms;
+    transition: background-color $transdur, box-shadow $transdur, filter $transdur;
     &:hover {
         background-color: lighten($primary, 32%);
         box-shadow: 0 .1rem .4rem .1rem $darkGrey;
+        cursor: default;
         .processIcon {
             color: $primary;
         }
@@ -309,7 +325,7 @@ a {
 
 .card {
     height: 15rem;
-    width: calc(max-width - 4rem);
+    width: 100%;
     background-color: whitesmoke;
     border-radius: 1rem;
     display: flex;
@@ -340,7 +356,7 @@ a {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    transition: 1500ms;
+    transition: 1000ms ease-out;
 }
 
 .newSticker {
@@ -358,7 +374,6 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 .cardText {
@@ -390,11 +405,13 @@ a {
 
 .cardIconFull {
     position: absolute;
-    color: transparent;
-    &:hover {
-        background: -webkit-linear-gradient($primary, $secondary);
+    background: -webkit-linear-gradient($primary, $secondary);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        opacity: 0;
+        transition: $transdur;
+    &:hover {
+        opacity: 1;
     }
 }
 
@@ -404,15 +421,29 @@ a {
     background-color: black;
 }
 
+.footerTitle {
+    display: flex;
+    @media screen and (min-width: 800px) {
+        justify-content: center;
+    }
+}
+
+.footerContent {
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: 800px) {
+        justify-content: center;
+        flex-direction: row;
+    }
+
+}
 .footerLink {
     color: whitesmoke;
     display: flex;
-    flex-direction: column;
     line-height: 1.7rem;
-}
-
-.footerLink {
-    flex-direction: row;
+    @media screen and (min-width: 800px) {
+        margin: 0 1rem;
+    }
 }
 
 .footerLinkIcon {

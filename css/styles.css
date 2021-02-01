@@ -14,8 +14,9 @@
 }
 .load {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  z-index: 9999;
+  height: 100%;
+  width: 100%;
   background-color: #eaeaea;
   display: flex;
   justify-content: center;
@@ -85,6 +86,12 @@
   width: 90%;
 }
 
+.content {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
 body {
   font-family: "Shrikhand", "Roboto", sans-serif;
   margin: 0;
@@ -136,7 +143,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: box-shadow 1500ms, filter 1500ms;
+  transition: box-shadow 1000ms, filter 1000ms;
 }
 .button.geoButton {
   width: 3rem;
@@ -163,7 +170,11 @@ a {
   padding: 0.5rem 1rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  align-content: flex-end;
+  align-content: center;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 0 0.5rem #808080;
+  margin: 0;
 }
 
 .logo {
@@ -172,6 +183,8 @@ a {
 }
 
 .searchZone {
+  position: relative;
+  z-index: 2;
   background-color: #f6f6f6;
 }
 
@@ -225,7 +238,7 @@ a {
 }
 
 .processCardGroup {
-  padding: 0 0.5rem;
+  padding: 0 1rem;
   display: grid;
   row-gap: 1.5rem;
 }
@@ -243,11 +256,12 @@ a {
   box-shadow: 0 0.1rem 0.4rem 0.1rem #eaeaea;
   display: flex;
   align-items: center;
-  transition: background-color 1500ms, box-shadow 1500ms, filter 1500ms;
+  transition: background-color 1000ms, box-shadow 1000ms, filter 1000ms;
 }
 .processCard:hover {
   background-color: #e9ddf8;
   box-shadow: 0 0.1rem 0.4rem 0.1rem #808080;
+  cursor: default;
 }
 .processCard:hover .processIcon {
   color: #9356dc;
@@ -301,7 +315,7 @@ a {
 
 .card {
   height: 15rem;
-  width: calc(max-width - 4rem);
+  width: 100%;
   background-color: whitesmoke;
   border-radius: 1rem;
   display: flex;
@@ -336,7 +350,7 @@ a {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  transition: 1500ms;
+  transition: 1000ms ease-out;
 }
 
 .newSticker {
@@ -385,12 +399,14 @@ a {
 
 .cardIconFull {
   position: absolute;
-  color: transparent;
-}
-.cardIconFull:hover {
   background: -webkit-linear-gradient(#9356dc, #ff79da);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  opacity: 0;
+  transition: 1000ms;
+}
+.cardIconFull:hover {
+  opacity: 1;
 }
 
 .footer {
@@ -399,15 +415,35 @@ a {
   background-color: black;
 }
 
-.footerLink {
-  color: whitesmoke;
+.footerTitle {
+  display: flex;
+}
+@media screen and (min-width: 800px) {
+  .footerTitle {
+    justify-content: center;
+  }
+}
+
+.footerContent {
   display: flex;
   flex-direction: column;
-  line-height: 1.7rem;
+}
+@media screen and (min-width: 800px) {
+  .footerContent {
+    justify-content: center;
+    flex-direction: row;
+  }
 }
 
 .footerLink {
-  flex-direction: row;
+  color: whitesmoke;
+  display: flex;
+  line-height: 1.7rem;
+}
+@media screen and (min-width: 800px) {
+  .footerLink {
+    margin: 0 1rem;
+  }
 }
 
 .footerLinkIcon {
