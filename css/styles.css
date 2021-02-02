@@ -156,6 +156,11 @@ a {
   color: whitesmoke;
   box-shadow: 0 0.1rem 0.4rem 0.1rem #eaeaea;
 }
+.button.validationButton {
+  background: linear-gradient(to bottom right, #ff79da, 45%, #9356dc);
+  color: whitesmoke;
+  box-shadow: 0 0.1rem 0.4rem 0.1rem #eaeaea;
+}
 .button:hover {
   cursor: pointer;
   filter: brightness(110%);
@@ -482,6 +487,186 @@ a {
 .footerLinkIcon {
   width: 20px;
   padding-right: 0.5rem;
+}
+
+.restaurantPicture {
+  position: relative;
+  z-index: 1;
+  height: 20rem;
+  width: 100%;
+  object-fit: cover;
+}
+@media screen and (min-width: 800px) {
+  .restaurantPicture {
+    height: 30rem;
+  }
+}
+
+.restaurantContent {
+  position: relative;
+  z-index: 9999;
+  background-color: #eaeaea;
+  margin-top: -3.5rem;
+  padding: 2rem 0.5rem;
+  border-radius: 2rem 2rem 0 0;
+  display: grid;
+  row-gap: 2rem;
+}
+
+.restaurantTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0 0.5rem;
+}
+@media screen and (min-width: 1280px) {
+  .restaurantTitle {
+    padding: 0 1rem;
+  }
+}
+
+.restaurantMenu {
+  display: grid;
+  row-gap: 1rem;
+  padding: 0 0.5rem;
+}
+@media screen and (min-width: 1280px) {
+  .restaurantMenu {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+    padding: 0 1rem;
+  }
+}
+
+.menuTitle {
+  position: relative;
+  font-family: Roboto;
+  font-weight: normal;
+  text-transform: uppercase;
+  padding: 0.3rem 0;
+}
+.menuTitle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 3.5rem;
+  height: 0.15rem;
+  background-color: #99e2d0;
+}
+
+.dishList {
+  padding: 1rem 0;
+  display: grid;
+  row-gap: 1rem;
+}
+
+.dishCard {
+  height: 4rem;
+  position: relative;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 3px 0px #808080;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dishLabel {
+  padding: 0.5rem 0.5rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dishText {
+  width: 450px;
+  font-family: Roboto;
+  font-weight: normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.dishText .dishTitle {
+  font-size: 0.9rem;
+}
+@media screen and (min-width: 768px) {
+  .dishText .dishTitle {
+    font-size: 1.1rem;
+  }
+}
+.dishText .dishDescription {
+  font-size: 0.85rem;
+  transition-duration: 2000ms;
+  margin-right: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .dishText .dishDescription {
+    font-size: 1rem;
+  }
+}
+
+.dishPrice {
+  box-sizing: border-box;
+  font-family: Roboto;
+  padding: 0 1.5rem 0.7rem 1.5rem;
+  margin-left: 0.5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: flex;
+  align-self: flex-end;
+  transition-duration: 1000ms;
+}
+
+.check {
+  position: absolute;
+  left: 100%;
+  height: 4rem;
+  width: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #99E2D0;
+  transition-duration: 1000ms;
+}
+
+.checkIcon {
+  color: white;
+  transition-duration: 1000ms;
+}
+
+.checkBox:checked ~ .dishLabel .dishDescription {
+  width: 240px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.checkBox:checked ~ .dishPrice {
+  transform: translateX(-100%);
+}
+
+.checkBox:checked ~ .check {
+  transform: translateX(-100%);
+}
+
+.checkBox:checked ~ .check > i {
+  transform: rotate(360deg);
+}
+
+.orderValidation {
+  background-color: #eaeaea;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
