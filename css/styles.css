@@ -428,24 +428,28 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
 }
-.cardIcon:hover .cardIconEmpty {
+
+.checkHeart {
+  position: absolute;
+}
+.checkHeart:checked ~ .heartLabel .cardIconEmpty {
   opacity: 0;
 }
-.cardIcon:hover .cardIconFull {
+.checkHeart:checked ~ .heartLabel .cardIconFull {
   opacity: 1;
 }
 
 .cardIconEmpty {
-  position: relative;
-  font-size: 1.9em;
+  cursor: pointer;
+  position: absolute;
   opacity: 1;
   transition: opacity 250ms;
 }
 
 .cardIconFull {
-  position: absolute;
+  cursor: pointer;
+  position: relative;
   background: -webkit-linear-gradient(#9356dc, #ff79da);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

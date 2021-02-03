@@ -430,8 +430,11 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-    &:hover {
+}
+
+.checkHeart {
+    position: absolute;
+    &:checked ~.heartLabel {
         .cardIconEmpty {
             opacity: 0;
         }
@@ -442,19 +445,20 @@ a {
 }
 
 .cardIconEmpty {
-    position: relative;
-    font-size: 1.9em;
+    cursor: pointer;
+    position: absolute;
     opacity: 1;
     transition: opacity 250ms;
 }
 
 .cardIconFull {
-    position: absolute;
+    cursor: pointer;
+    position: relative;
     background: -webkit-linear-gradient($primary, $secondary);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        opacity: 0;
-        transition: opacity $transdur;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    transition: opacity $transdur;
 }
 
 .footer {
