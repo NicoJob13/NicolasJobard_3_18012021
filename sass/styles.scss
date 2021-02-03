@@ -430,11 +430,21 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    &:hover {
+        .cardIconEmpty {
+            opacity: 0;
+        }
+        .cardIconFull {
+            opacity: 1;
+        }
+    }
 }
 
 .cardIconEmpty {
     position: relative;
     font-size: 1.9em;
+    opacity: 1;
+    transition: opacity 250ms;
 }
 
 .cardIconFull {
@@ -443,10 +453,7 @@ a {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         opacity: 0;
-        transition: $transdur;
-    &:hover {
-        opacity: 1;
-    }
+        transition: opacity $transdur;
 }
 
 .footer {
