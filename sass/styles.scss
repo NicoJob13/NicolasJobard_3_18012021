@@ -541,6 +541,7 @@ a {
     font-weight: normal;
     text-transform: uppercase;
     padding: .3rem 0;
+    animation: loadMenu 1000ms ease-in 1 both;
     &::after {
         content: "";
         position: absolute;
@@ -569,6 +570,7 @@ a {
     white-space: nowrap;
     display: flex;
     justify-content: space-between;
+    animation: loadMenu 1000ms ease-in 1 both;
 }
 
 .dishLabel {
@@ -660,4 +662,66 @@ a {
     display: flex;
     justify-content: center;
     padding-bottom: 2rem;
+}
+
+@keyframes loadMenu {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.appearDelay1 {
+    animation-delay: 100ms;
+}
+
+.appearDelay2 {
+    animation-delay: 300ms;
+}
+
+.appearDelay3 {
+    animation-delay: 500ms;
+}
+
+.appearDelay4 {
+    animation-delay: 700ms;
+}
+
+.appearDelay5 {
+    animation-delay: 900ms;
+}
+
+.appearDelay6 {
+    animation-delay: 1100ms;
+}
+
+.appearDelay7 {
+    animation-delay: 1300ms;
+}
+
+.appearDelay8 {
+    animation-delay: 1500ms;
+}
+
+.appearDelay9 {
+    animation-delay: 1700ms;
+}
+
+.appearDelay10 {
+    animation-delay: 1900ms;
+}
+
+.appearDelay11 {
+    animation-delay: 2100ms;
+}
+
+.appearDelay12 {
+    animation-delay: 2300ms;
+}
+
+.appearDelay13 {
+    animation-delay: 2500ms;
 }
