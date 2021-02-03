@@ -3,51 +3,220 @@
     <head>
         <title>Ohmyfood! - Restaurant La note enchantée</title>
         <meta charset="utf-8">
-        <meta name="description" content="Réservation de menus de qualité supérieure">
+        <meta name="description" content="La carte du restaurant La note enchantée">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="../css/styles.css">
 		<script src="https://kit.fontawesome.com/1ff953b2ad.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <header>
-            <div class="container header">
+            <div class="header">
                 <a href="../index.html"><i class="fas fa-arrow-left"></i></a>
                 <div class="logo">
                     <img src="../images/logo/ohmyfood@2x.svg" alt="Logo représentant le nom Ohmyfood écrit en caractères arrondis" class="logo">
                 </div>
             </div>
         </header>
-        <main></main>
-        <footer>
-            <section class="footer container">
-                <h2>Ohmyfood</h2>
+        <main>
+            <section>
+                <img class="restaurantPicture" src="../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="photographie d'une assiette ronde et blanche contenant une poêlée de lamelles de sèches et supions, accompagnée d'une purée de poivrons, d'olives et de deux beignets en forme de boule">
+            </section>
+            <section class="container restaurantContent">
+                <div class="restaurantTitle">
+                    <h1>La note enchantée</h1>
+                    <div class="cardIcon">
+                        <i class="far fa-heart cardIconEmpty"></i>
+                        <i class="fa-2x fas fa-heart cardIconFull"></i>
+                    </div>
+                </div>
+                <div class="restaurantMenu">
+                    <div class="menuStarters">
+                        <h2 class="appearDelay1 menuTitle">Entrées</h2>
+                        <div class="dishList">
+                            <div class="appearDelay2 dishCard">
+                                <input type="checkbox" class="checkBox" name="checkBox" id="starter1" hidden>
+                                <label class="dishLabel" for="starter1">
+                                    <div class="dishText">
+                                        <h3 class="dishTitle">Ravioles de foie gras</h3>
+                                        <span class="dishDescription">Accompagnés de leur crème à la truffe</span>
+                                    </div>
+                                </label>
+                                <div class="dishPrice"><strong>25 €</strong></div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle checkIcon"></i>
+                                </div>
+                            </div>
+                            <div class="appearDelay3 dishCard">
+                                <input type="checkbox" class="checkBox" name="checkBox" id="starter2" hidden>
+                                <label class="dishLabel" for="starter2">
+                                    <div class="dishText">
+                                        <h3 class="dishTitle">Caviar osciètre</h3>
+                                        <span class="dishDescription">Sur blini à la farine de blé noir</span>
+                                    </div>
+                                </label>
+                                <div class="dishPrice"><strong>35 €</strong></div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle checkIcon"></i>
+                                </div>
+                            </div>
+                            <div class="appearDelay4 dishCard">
+                                <input type="checkbox" class="checkBox" name="checkBox" id="starter3" hidden>
+                                <label class="dishLabel" for="starter3">
+                                    <div class="dishText">
+                                        <h3 class="dishTitle">Homard et espuma de potiron</h3>
+                                        <span class="dishDescription">Mariné aux zestes d'orange</span>
+                                    </div>
+                                </label>
+                                <div class="dishPrice"><strong>20 €</strong></div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle checkIcon"></i>
+                                </div>
+                            </div>
+                            <div class="appearDelay5 dishCard">
+                                <input type="checkbox" class="checkBox" name="checkBox" id="starter3" hidden>
+                                <label class="dishLabel" for="starter3">
+                                    <div class="dishText">
+                                        <h3 class="dishTitle">Foie gras de canard cuit entier</h3>
+                                        <span class="dishDescription">Confiture de figue et pain toasté</span>
+                                    </div>
+                                </label>
+                                <div class="dishPrice"><strong>35 €</strong></div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle checkIcon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menuDishes">
+                        <h2 class="appearDelay6 menuTitle">Plats</h2>
+                        <div class="dishList">
+                            <div class="appearDelay7 dishCard">
+                                <input type="checkbox" class="checkBox" name="checkBox" id="mainDish1" hidden>
+                                <label class="dishLabel" for="mainDish1">
+                                    <div class="dishText">
+                                        <h3 class="dishTitle">Noix de coquilles Saint-Jacques</h3>
+                                        <span class="dishDescription">Sur lit de purée de céleri-rave</span>
+                                    </div>
+                                </label>
+                                <div class="dishPrice"><strong>40 €</strong></div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle checkIcon"></i>
+                                </div>
+                            </div>
+                            <div class="appearDelay8 dishCard">
+                                <input type="checkbox" class="checkBox" name="checkBox" id="mainDish2" hidden>
+                                <label class="dishLabel" for="mainDish2">
+                                    <div class="dishText">
+                                        <h3 class="dishTitle">Langoustine poêlée</h3>
+                                        <span class="dishDescription">Purée de patate douce</span>
+                                    </div>
+                                </label>
+                                <div class="dishPrice"><strong>35 €</strong></div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle checkIcon"></i>
+                                </div>
+                            </div>
+                            <div class="appearDelay9 dishCard">
+                                <input type="checkbox" class="checkBox" name="checkBox" id="mainDish3" hidden>
+                                <label class="dishLabel" for="mainDish3">
+                                    <div class="dishText">
+                                        <h3 class="dishTitle">Mijoté de queue de boeuf</h3>
+                                        <span class="dishDescription">Et riz sauvage aux zestes de citron</span>
+                                    </div>
+                                </label>
+                                <div class="dishPrice"><strong>44 €</strong></div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle checkIcon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menuDesserts">
+                        <h2 class="appearDelay10 menuTitle">Desserts</h2>
+                        <div class="dishList">
+                            <div class="appearDelay11 dishCard">
+                                <input type="checkbox" class="checkBox" name="checkBox" id="dessert1" hidden>
+                                <label class="dishLabel" for="dessert1">
+                                    <div class="dishText">
+                                        <h3 class="dishTitle">Macaron noisette et chocolat</h3>
+                                        <span class="dishDescription">Glace au caramel brun et sel de Guérande</span>
+                                    </div>
+                                </label>
+                                <div class="dishPrice"><strong>18 €</strong></div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle checkIcon"></i>
+                                </div>
+                            </div>
+                            <div class="appearDelay12 dishCard">
+                                <input type="checkbox" class="checkBox" name="checkBox" id="dessert2" hidden>
+                                <label class="dishLabel" for="dessert2">
+                                    <div class="dishText">
+                                        <h3 class="dishTitle">Baba au rhum revisité</h3>
+                                        <span class="dishDescription">Avec son coulis de citron</span>
+                                    </div>
+                                </label>
+                                <div class="dishPrice"><strong>22 €</strong></div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle checkIcon"></i>
+                                </div>
+                            </div>
+                            <div class="appearDelay13 dishCard">
+                                <input type="checkbox" class="checkBox" name="checkBox" id="dessert3" hidden>
+                                <label class="dishLabel" for="dessert3">
+                                    <div class="dishText">
+                                        <h3 class="dishTitle">Tarte au citron meringuée</h3>
+                                        <span class="dishDescription">Déstructurée</span>
+                                    </div>
+                                </label>
+                                <div class="dishPrice"><strong>23 €</strong></div>
+                                <div class="check">
+                                    <i class="fas fa-check-circle checkIcon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="container orderValidation">
                 <div>
-                    <a class="footerLink" href="#">
-                        <span class="footerLinkIcon">
-                            <i class="fas fa-utensils"></i>
-                        </span>
-                        <span>
-                            Proposer un restaurant
-                        </span>
-                    </a>
-                    <a class="footerLink" href="#">
-                        <span class="footerLinkIcon">
-                            <i class="fas fa-hands-helping"></i>
-                        </span>
-                        <span>
-                            Devenir partenaire
-                        </span>
-                    </a>
-                    <a class="footerLink" href="#">
-                        <span>
-                            Mentions légales
-                        </span>
-                    </a>
-                    <a class="footerLink" href="mailto:contact@ohmyfood.com">
-                        <span>
-                            Contact
-                        </span>
-                    </a>
+                    <button class="button validationButton">Commander</button>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <section class="footer">
+                <div class="container">
+                    <div class="footerTitle">
+                        <h2>Ohmyfood</h2>
+                    </div>
+                    <div class="footerContent">
+                        <a class="footerLink" href="#">
+                            <span class="footerLinkIcon">
+                                <i class="fas fa-utensils"></i>
+                            </span>
+                            <span>
+                                Proposer un restaurant
+                            </span>
+                        </a>
+                        <a class="footerLink" href="#">
+                            <span class="footerLinkIcon">
+                                <i class="fas fa-hands-helping"></i>
+                            </span>
+                            <span>
+                                Devenir partenaire
+                            </span>
+                        </a>
+                        <a class="footerLink" href="#">
+                            <span>
+                                Mentions légales
+                            </span>
+                        </a>
+                        <a class="footerLink" href="mailto:contact@ohmyfood.com">
+                            <span>
+                                Contact
+                            </span>
+                        </a>
+                    </div>
                 </div>
             </section>
         </footer>
