@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 $primary: #9356dc;
@@ -9,10 +8,50 @@ $grey: #eaeaea;
 $lightGrey: #f6f6f6;
 $darkGrey: #808080;
 $loadingSpinnerBg: gainsboro;
+$footerBg: black;
+$inputBg: whitesmoke;
+$cardBg: whitesmoke;
+$dishCardBg: white;
+$lightenPolicy: whitesmoke;
+$linkColor: black;
+
+$iconSize: 1.3rem;
+$buttonFontSize: 1.1rem;
 
 $sectionPadding : 2rem 1rem;
 
-$transdur: 1000ms;
+$buttonRadius: 2rem;
+$cardRadius: 1rem;
+$stickerRadius: .16rem;
+
+$transDur: 1000ms;
+$animDur: 2000ms;
+$loadDur: 3000ms;
+
+@mixin shadowHeader {
+    box-shadow: 0 0 0.5rem $darkGrey;
+}
+
+@mixin shadowButton {
+    box-shadow: 0 .1rem .4rem .1rem $grey;
+}
+
+@mixin shadowButtonHover {
+    box-shadow: 0 .1rem .4rem .1rem $darkGrey;
+}
+
+@mixin shadowCard {
+    box-shadow: 0 .1rem .4rem .1rem $grey;
+}
+
+@mixin dishCardShadow {
+    box-shadow: 0 0 3px 0px $darkGrey;
+}
+
+@mixin inputFocus {
+    outline: solid 2px $darkGrey;
+    background-color: $inputBg;
+}
 
 @keyframes load {
     0% {
@@ -36,52 +75,52 @@ $transdur: 1000ms;
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: load 3000ms ease-in-out 1 forwards;
+    animation: load $loadDur ease-in-out 1 forwards;
 }
 
 @keyframes spinner {
     0% {
-        border-color: #9356DC;
+        border-color: $primary;
         opacity: 0;
         transform: scale(0.5);
     }
     16.66% {
-        border-color: #9356DC;
+        border-color: $primary;
         opacity: 1;
         transform: scale(1);
     }
     33.33% {
-        border-color: #9356DC;
+        border-color: $primary;
         opacity: 0;
         transform: scale(0.5);
     }
     33.34% {
-        border-color: #FF79DA;
+        border-color: $secondary;
         opacity: 0;
         transform: scale(0.5);
     }
     50% {
-        border-color: #FF79DA;
+        border-color: $secondary;
         opacity: 1;
         transform: scale(1);
     }
     66.66% {
-        border-color: #FF79DA;
+        border-color: $secondary;
         opacity: 0;
         transform: scale(0.5);
     }
     66.67% {
-        border-color: #99E2D0;
+        border-color: $tertiary;
         opacity: 0;
         transform: scale(0.5);
     }
     83.33% {
-        border-color: #99E2D0;
+        border-color: $tertiary;
         opacity: 1;
         transform: scale(1);
     }
     100% {
-        border-color: #99E2D0;
+        border-color: $tertiary;
         opacity: 0;
         transform: scale(0.5);
     }
@@ -95,7 +134,7 @@ $transdur: 1000ms;
     height: 150px;
     border: 5px solid;
     background-color: $loadingSpinnerBg;
-    animation: spinner 3s ease-in-out infinite;
+    animation: spinner $loadDur ease-in-out infinite;
 }
 
 .loadingSpinnerImg {
@@ -119,6 +158,15 @@ body {
     box-sizing: border-box;
 }
 
+h1, h2, h3, h4 {
+    font: 'Shrikhand', sans-serif;
+    margin: 0;
+}
+
+h1, h2 {
+    padding-bottom: 1rem;
+}
+
 h1 {
     font-size: 1.5rem;
 }
@@ -128,16 +176,11 @@ h2 {
 }
 
 h3 {
+    font-size: 1.2rem;
+}
+
+h4 {
     font-size: 1.1rem;
-}
-
-h1, h2, h3 {
-    font: 'Shrikhand', sans-serif;
-    margin: 0;
-}
-
-h1, h2 {
-    padding-bottom: 1rem;
 }
 
 p, span, img {
@@ -147,39 +190,39 @@ p, span, img {
 
 a {
     text-decoration: none;
-    color: black;
+    color: $linkColor;
 }
 
 .button {
     height: 3rem;
     padding: 1rem;
     border: none;
-    border-radius: 2rem;
-    font-size: 1.1rem;
+    border-radius: $buttonRadius;
+    font-size: $buttonFontSize;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: box-shadow $transdur, filter $transdur;
+    transition: box-shadow $transDur, filter $transDur;
     &.geoButton {
         width: 3rem;
         background-color: $grey;
         margin-right: .5rem;
-        font-size: 1.3rem;
+        font-size: $iconSize;
     }
     &.searchButton {
         background: linear-gradient(to bottom right, $secondary, 45%, $primary);
-        color: whitesmoke;
-        box-shadow: 0 .1rem .4rem .1rem $grey;
+        color: $lightenPolicy;
+        @include shadowButton;
     }
     &.validationButton {
         background: linear-gradient(to bottom right, $secondary, 45%, $primary);
-        color: whitesmoke;
-        box-shadow: 0 .1rem .4rem .1rem $grey;
+        color: $lightenPolicy;
+        @include shadowButton;
     }
     &:hover {
         cursor: pointer;
         filter: brightness(110%);
-        box-shadow: 0 .1rem .4rem .1rem $darkGrey;
+        @include shadowButtonHover;
     }
     &:focus {
         outline-style: none;
@@ -194,7 +237,7 @@ a {
     align-content: center;
     position: relative;
     z-index: 10;
-    box-shadow: 0 0 0.5rem $darkGrey;
+    @include shadowHeader;
     margin: 0;
 }
 
@@ -229,12 +272,10 @@ a {
     align-items: center;
     background-color: $grey;
     border: none;
-    font-size: .9rem;
     font-weight: bold;
     text-align: center;
     &:focus {
-        outline: solid 2px $darkGrey;
-        background-color: whitesmoke;
+        @include inputFocus;
     }
 }
 
@@ -271,14 +312,14 @@ a {
 .processCard {
     height: 4rem;
     background-color: $lightGrey;
-    border-radius: 1rem;
-    box-shadow: 0 .1rem .4rem .1rem $grey;
+    border-radius: $cardRadius;
+    @include shadowButton;
     display: flex;
     align-items: center;
-    transition: background-color $transdur, box-shadow $transdur, filter $transdur;
+    transition: background-color $transDur, box-shadow $transDur, filter $transDur;
     &:hover {
         background-color: lighten($primary, 32%);
-        box-shadow: 0 .1rem .4rem .1rem $darkGrey;
+        @include shadowButtonHover;
         cursor: default;
         .processIcon {
             color: $primary;
@@ -292,7 +333,7 @@ a {
     height: 1.8rem;
     width: 1.8rem;
     border-radius: 3rem;
-    color: whitesmoke;
+    color: $lightenPolicy;
     background-color: $primary;
     display: flex;
     justify-content: center;
@@ -331,11 +372,11 @@ a {
 .card {
     height: 15rem;
     width: 100%;
-    background-color: whitesmoke;
-    border-radius: 1rem;
+    background-color: $cardBg;
+    border-radius: $cardRadius;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 .1rem .4rem .1rem $grey;
+    @include shadowCard;
     @media screen and (min-width: 500px) {
         height: 20rem;
     }
@@ -367,7 +408,7 @@ a {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    transition: 1000ms ease-out;
+    transition: $transDur ease-out;
     &.cardPicture1 {
         object-position: 0% 85%;
     }
@@ -404,7 +445,7 @@ a {
     font-family: Roboto;
     font-weight: 500;
     color: darken($tertiary, 40%);
-    border-radius: .16rem;
+    border-radius: $stickerRadius;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -432,7 +473,7 @@ a {
     align-items: center;
 }
 
-.checkHeart {
+.checkBox {
     position: absolute;
     &:checked ~.heartLabel {
         .cardIconEmpty {
@@ -441,6 +482,16 @@ a {
         .cardIconFull {
             opacity: 1;
         }
+    }
+    &:checked ~.dishPrice {
+        transform: translateX(-4rem);
+        margin-left: 4.5rem;
+    }
+    &:checked ~.check {
+        transform: translateX(-100%);
+    }
+    &:checked ~.check > i {
+        transform: rotate(360deg);
     }
 }
 
@@ -458,13 +509,13 @@ a {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: 0;
-    transition: opacity $transdur;
+    transition: opacity $transDur;
 }
 
 .footer {
     padding: $sectionPadding;
-    color: whitesmoke;
-    background-color: black;
+    color: $lightenPolicy;
+    background-color: $footerBg;
 }
 
 .footerTitle {
@@ -481,10 +532,10 @@ a {
         justify-content: center;
         flex-direction: row;
     }
-
 }
+
 .footerLink {
-    color: whitesmoke;
+    color: $lightenPolicy;
     display: flex;
     line-height: 1.7rem;
     @media screen and (min-width: 800px) {
@@ -535,7 +586,7 @@ a {
     padding: 0 .5rem;
     @media screen and (min-width: 1280px) {
         grid-template-columns: repeat(3, 1fr);
-        column-gap: 1rem;
+        column-gap: 2rem;
         padding: 0 1rem;
     }
 }
@@ -546,7 +597,6 @@ a {
     font-weight: normal;
     text-transform: uppercase;
     padding: .3rem 0;
-    animation: loadMenu 1000ms ease-in 1 both;
     &::after {
         content: "";
         position: absolute;
@@ -561,69 +611,51 @@ a {
 .dishList {
     padding: 1rem 0;
     display: grid;
-    row-gap: 1rem;
+    row-gap: 1.2rem;
 }
 
 .dishCard {
+    font-family: Roboto;
     height: 4rem;
     position: relative;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 3px 0px $darkGrey;
+    background-color: $dishCardBg;
+    border-radius: $cardRadius;
+    @include dishCardShadow;
     cursor: pointer;
     overflow: hidden;
     white-space: nowrap;
     display: flex;
     justify-content: space-between;
-    animation: loadMenu 1000ms ease-in 1 both;
+    animation: loadMenu $animDur ease-in-out 1 both;
 }
 
 .dishLabel {
-    padding: .5rem .5rem;
-    box-sizing: border-box;
     cursor: pointer;
     border: none;
-    font-weight: 600;
-    display: flex;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .dishText {
-    width: 450px;
-    font-family: Roboto;
-    font-weight: normal;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    .dishTitle {
-        font-size: .9rem;
-        @media screen and (min-width: 768px) {
-            font-size: 1.1rem;
-        }
-    }
-    .dishDescription {
-        font-size: .85rem;
-        transition-duration: 2000ms;
-        margin-right: 1.5rem;
-        @media screen and (min-width: 768px) {
-            font-size: 1rem;
-        }
+    padding: .5rem 0 0 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    .dishTitle, .dishDescription {
+        padding-bottom: .2rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }
 
 .dishPrice {
-    box-sizing: border-box;
-    font-family: Roboto;
-    padding: 0 1.5rem .7rem 1.5rem;
-    margin-left: .5rem;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    padding: 0 1rem .6rem 0;
     display: flex;
     align-self: flex-end;
-    transition-duration: 1000ms;
+    transition-duration: $transDur;
 }
 
 .check {
@@ -634,45 +666,30 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #99E2D0;
-    transition-duration: 1000ms;
+    background-color: $tertiary;
+    transition-duration: $transDur;
 }
 
 .checkIcon {
-    color: white;
-    transition-duration: 1000ms;
-}
-
-.checkBox:checked ~.dishLabel .dishDescription {
-    width: 240px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.checkBox:checked ~.dishPrice {
-    transform: translateX(-100%);
-}
-
-.checkBox:checked ~.check {
-    transform: translateX(-100%);
-}
-
-.checkBox:checked ~.check > i {
-    transform: rotate(360deg);
+    font-size: $iconSize;
+    color: $lightenPolicy;
+    transition-duration: $transDur;
 }
 
 .orderValidation {
     background-color: $grey;
     display: flex;
     justify-content: center;
-    padding-bottom: 2rem;
+    padding: 1rem 0 2rem 0;
 }
 
 @keyframes loadMenu {
     0% {
-        visibility: hidden;
+        transform: translateY(1rem);
         opacity: 0;
+    }
+    35% {
+        transform: translateY(0);
     }
     100% {
         opacity: 1;
@@ -680,53 +697,53 @@ a {
 }
 
 .appearDelay1 {
-    animation-delay: 100ms;
+    animation-delay: 150ms;
 }
 
 .appearDelay2 {
-    animation-delay: 300ms;
+    animation-delay: 400ms;
 }
 
 .appearDelay3 {
-    animation-delay: 500ms;
+    animation-delay: 650ms;
 }
 
 .appearDelay4 {
-    animation-delay: 700ms;
-}
-
-.appearDelay5 {
     animation-delay: 900ms;
 }
 
+.appearDelay5 {
+    animation-delay: 1150ms;
+}
+
 .appearDelay6 {
-    animation-delay: 1100ms;
+    animation-delay: 1400ms;
 }
 
 .appearDelay7 {
-    animation-delay: 1300ms;
+    animation-delay: 1650ms;
 }
 
 .appearDelay8 {
-    animation-delay: 1500ms;
-}
-
-.appearDelay9 {
-    animation-delay: 1700ms;
-}
-
-.appearDelay10 {
     animation-delay: 1900ms;
 }
 
+.appearDelay9 {
+    animation-delay: 2150ms;
+}
+
+.appearDelay10 {
+    animation-delay: 2400ms;
+}
+
 .appearDelay11 {
-    animation-delay: 2100ms;
+    animation-delay: 2650ms;
 }
 
 .appearDelay12 {
-    animation-delay: 2300ms;
+    animation-delay: 2900ms;
 }
 
 .appearDelay13 {
-    animation-delay: 2500ms;
+    animation-delay: 3150ms;
 }

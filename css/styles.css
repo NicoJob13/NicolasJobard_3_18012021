@@ -26,47 +26,47 @@
 
 @keyframes spinner {
   0% {
-    border-color: #9356DC;
+    border-color: #9356dc;
     opacity: 0;
     transform: scale(0.5);
   }
   16.66% {
-    border-color: #9356DC;
+    border-color: #9356dc;
     opacity: 1;
     transform: scale(1);
   }
   33.33% {
-    border-color: #9356DC;
+    border-color: #9356dc;
     opacity: 0;
     transform: scale(0.5);
   }
   33.34% {
-    border-color: #FF79DA;
+    border-color: #ff79da;
     opacity: 0;
     transform: scale(0.5);
   }
   50% {
-    border-color: #FF79DA;
+    border-color: #ff79da;
     opacity: 1;
     transform: scale(1);
   }
   66.66% {
-    border-color: #FF79DA;
+    border-color: #ff79da;
     opacity: 0;
     transform: scale(0.5);
   }
   66.67% {
-    border-color: #99E2D0;
+    border-color: #99e2d0;
     opacity: 0;
     transform: scale(0.5);
   }
   83.33% {
-    border-color: #99E2D0;
+    border-color: #99e2d0;
     opacity: 1;
     transform: scale(1);
   }
   100% {
-    border-color: #99E2D0;
+    border-color: #99e2d0;
     opacity: 0;
     transform: scale(0.5);
   }
@@ -79,7 +79,7 @@
   height: 150px;
   border: 5px solid;
   background-color: gainsboro;
-  animation: spinner 3s ease-in-out infinite;
+  animation: spinner 3000ms ease-in-out infinite;
 }
 
 .loadingSpinnerImg {
@@ -103,6 +103,15 @@ body {
   box-sizing: border-box;
 }
 
+h1, h2, h3, h4 {
+  font: "Shrikhand", sans-serif;
+  margin: 0;
+}
+
+h1, h2 {
+  padding-bottom: 1rem;
+}
+
 h1 {
   font-size: 1.5rem;
 }
@@ -112,16 +121,11 @@ h2 {
 }
 
 h3 {
+  font-size: 1.2rem;
+}
+
+h4 {
   font-size: 1.1rem;
-}
-
-h1, h2, h3 {
-  font: "Shrikhand", sans-serif;
-  margin: 0;
-}
-
-h1, h2 {
-  padding-bottom: 1rem;
 }
 
 p, span, img {
@@ -213,7 +217,6 @@ a {
   align-items: center;
   background-color: #eaeaea;
   border: none;
-  font-size: 0.9rem;
   font-weight: bold;
   text-align: center;
 }
@@ -430,14 +433,24 @@ a {
   align-items: center;
 }
 
-.checkHeart {
+.checkBox {
   position: absolute;
 }
-.checkHeart:checked ~ .heartLabel .cardIconEmpty {
+.checkBox:checked ~ .heartLabel .cardIconEmpty {
   opacity: 0;
 }
-.checkHeart:checked ~ .heartLabel .cardIconFull {
+.checkBox:checked ~ .heartLabel .cardIconFull {
   opacity: 1;
+}
+.checkBox:checked ~ .dishPrice {
+  transform: translateX(-4rem);
+  margin-left: 4.5rem;
+}
+.checkBox:checked ~ .check {
+  transform: translateX(-100%);
+}
+.checkBox:checked ~ .check > i {
+  transform: rotate(360deg);
 }
 
 .cardIconEmpty {
@@ -543,7 +556,7 @@ a {
 @media screen and (min-width: 1280px) {
   .restaurantMenu {
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 1rem;
+    column-gap: 2rem;
     padding: 0 1rem;
   }
 }
@@ -554,7 +567,6 @@ a {
   font-weight: normal;
   text-transform: uppercase;
   padding: 0.3rem 0;
-  animation: loadMenu 1000ms ease-in 1 both;
 }
 .menuTitle::after {
   content: "";
@@ -569,70 +581,48 @@ a {
 .dishList {
   padding: 1rem 0;
   display: grid;
-  row-gap: 1rem;
+  row-gap: 1.2rem;
 }
 
 .dishCard {
+  font-family: Roboto;
   height: 4rem;
   position: relative;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 1rem;
   box-shadow: 0 0 3px 0px #808080;
   cursor: pointer;
   overflow: hidden;
   white-space: nowrap;
   display: flex;
   justify-content: space-between;
-  animation: loadMenu 1000ms ease-in 1 both;
+  animation: loadMenu 2000ms ease-in-out 1 both;
 }
 
 .dishLabel {
-  padding: 0.5rem 0.5rem;
-  box-sizing: border-box;
   cursor: pointer;
   border: none;
-  font-weight: 600;
-  display: flex;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .dishText {
-  width: 450px;
-  font-family: Roboto;
-  font-weight: normal;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  padding: 0.5rem 0 0 1rem;
+  white-space: nowrap;
+  overflow: hidden;
 }
-.dishText .dishTitle {
-  font-size: 0.9rem;
-}
-@media screen and (min-width: 768px) {
-  .dishText .dishTitle {
-    font-size: 1.1rem;
-  }
-}
-.dishText .dishDescription {
-  font-size: 0.85rem;
-  transition-duration: 2000ms;
-  margin-right: 1.5rem;
-}
-@media screen and (min-width: 768px) {
-  .dishText .dishDescription {
-    font-size: 1rem;
-  }
+.dishText .dishTitle, .dishText .dishDescription {
+  padding-bottom: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .dishPrice {
-  box-sizing: border-box;
-  font-family: Roboto;
-  padding: 0 1.5rem 0.7rem 1.5rem;
-  margin-left: 0.5rem;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  padding: 0 1rem 0.6rem 0;
   display: flex;
   align-self: flex-end;
   transition-duration: 1000ms;
@@ -646,100 +636,85 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   transition-duration: 1000ms;
 }
 
 .checkIcon {
-  color: white;
+  font-size: 1.3rem;
+  color: whitesmoke;
   transition-duration: 1000ms;
-}
-
-.checkBox:checked ~ .dishLabel .dishDescription {
-  width: 240px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.checkBox:checked ~ .dishPrice {
-  transform: translateX(-100%);
-}
-
-.checkBox:checked ~ .check {
-  transform: translateX(-100%);
-}
-
-.checkBox:checked ~ .check > i {
-  transform: rotate(360deg);
 }
 
 .orderValidation {
   background-color: #eaeaea;
   display: flex;
   justify-content: center;
-  padding-bottom: 2rem;
+  padding: 1rem 0 2rem 0;
 }
 
 @keyframes loadMenu {
   0% {
-    visibility: hidden;
+    transform: translateY(1rem);
     opacity: 0;
+  }
+  35% {
+    transform: translateY(0);
   }
   100% {
     opacity: 1;
   }
 }
 .appearDelay1 {
-  animation-delay: 100ms;
+  animation-delay: 150ms;
 }
 
 .appearDelay2 {
-  animation-delay: 300ms;
+  animation-delay: 400ms;
 }
 
 .appearDelay3 {
-  animation-delay: 500ms;
+  animation-delay: 650ms;
 }
 
 .appearDelay4 {
-  animation-delay: 700ms;
-}
-
-.appearDelay5 {
   animation-delay: 900ms;
 }
 
+.appearDelay5 {
+  animation-delay: 1150ms;
+}
+
 .appearDelay6 {
-  animation-delay: 1100ms;
+  animation-delay: 1400ms;
 }
 
 .appearDelay7 {
-  animation-delay: 1300ms;
+  animation-delay: 1650ms;
 }
 
 .appearDelay8 {
-  animation-delay: 1500ms;
-}
-
-.appearDelay9 {
-  animation-delay: 1700ms;
-}
-
-.appearDelay10 {
   animation-delay: 1900ms;
 }
 
+.appearDelay9 {
+  animation-delay: 2150ms;
+}
+
+.appearDelay10 {
+  animation-delay: 2400ms;
+}
+
 .appearDelay11 {
-  animation-delay: 2100ms;
+  animation-delay: 2650ms;
 }
 
 .appearDelay12 {
-  animation-delay: 2300ms;
+  animation-delay: 2900ms;
 }
 
 .appearDelay13 {
-  animation-delay: 2500ms;
+  animation-delay: 3150ms;
 }
 
 /*# sourceMappingURL=styles.css.map */
