@@ -1,0 +1,35 @@
+.footer {
+    padding: $sectionPadding;
+    color: $lightenPolicy;
+    background-color: $footerBg;
+}
+
+.footerTitle {
+    display: flex;
+    @media screen and (min-width: 800px) {
+        justify-content: center;
+    }
+}
+
+.footerContent {
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: 800px) {
+        justify-content: center;
+        flex-direction: row;
+    }
+}
+
+.footerLink {
+    color: $lightenPolicy;
+    display: flex;
+    line-height: 1.7rem;
+    @media screen and (min-width: 800px) {
+        margin: 0 1rem;
+    }
+}
+
+.footerLinkIcon {
+    width: 20px;
+    padding-right: .5rem;
+}

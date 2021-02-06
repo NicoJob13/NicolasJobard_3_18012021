@@ -1,0 +1,24 @@
+@mixin shadowHeader {
+    box-shadow: 0 0 0.5rem $darkGrey;
+}
+
+@mixin shadowButton {
+    box-shadow: 0 .1rem .4rem .1rem $grey;
+}
+
+@mixin shadowButtonHover {
+    box-shadow: 0 .1rem .4rem .1rem $darkGrey;
+}
+
+@mixin shadowCard {
+    box-shadow: 0 .1rem .4rem .1rem $grey;
+}
+
+@mixin dishCardShadow {
+    box-shadow: 0 0 3px 0px $darkGrey;
+}
+
+@mixin inputFocus {
+    outline: solid 2px $darkGrey;
+    background-color: $inputBg;
+}

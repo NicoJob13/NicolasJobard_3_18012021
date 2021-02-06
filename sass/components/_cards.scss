@@ -1,0 +1,204 @@
+.card {
+    height: 15rem;
+    width: 100%;
+    background-color: $cardBg;
+    border-radius: $cardRadius;
+    display: flex;
+    flex-direction: column;
+    @include shadowCard;
+    @media screen and (min-width: 500px) {
+        height: 20rem;
+    }
+    @media screen and (min-width: 750px) {
+        height: 22rem;
+    }
+}
+
+.cardPictureContainer {
+    position: relative;
+    height: 11rem;
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+    display: flex;
+    overflow: hidden;
+    @media screen and (min-width: 500px) {
+        height: 16rem;
+    }
+    @media screen and (min-width: 750px) {
+        height: 18rem;
+    }
+}
+
+.cardPictureContainer:hover .cardPicture {
+  transform: scale(1.1);
+}
+
+.cardPicture {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: $transDur ease-out;
+    &.cardPicture1 {
+        object-position: 0% 85%;
+    }
+    &.cardPicture2 {
+        object-position: 0% 61%;
+    }
+    &.cardPicture3 {
+        object-position: 0% 95%;
+    }
+    &.cardPicture4 {
+        object-position: 0% 90%;
+    }
+    @media screen and (min-width: 1280px) {
+        &.cardPicture1 {
+            object-position: 40% 85%;
+        }
+        &.cardPicture3 {
+            object-position: 20% 95%;
+        }
+        &.cardPicture4 {
+            object-position: 40% 90%;
+        }
+    }
+}
+
+.newSticker {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 4.9rem;
+    height: 1.6rem;
+    padding: .4rem;
+    background-color: $tertiary;
+    font-family: Roboto;
+    font-weight: 500;
+    color: darken($tertiary, 40%);
+    border-radius: $stickerRadius;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardText {
+    height: 4rem;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h3 {
+        font-family: Roboto;
+    }
+}
+
+.cardTitle {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkBox {
+    position: absolute;
+    &:checked ~.heartLabel {
+        .cardIconEmpty {
+            opacity: 0;
+        }
+        .cardIconFull {
+            opacity: 1;
+        }
+    }
+    &:checked ~.dishPrice {
+        transform: translateX(-4rem);
+        margin-left: 4.5rem;
+    }
+    &:checked ~.check {
+        transform: translateX(-100%);
+    }
+    &:checked ~.check > i {
+        transform: rotate(360deg);
+    }
+}
+
+.cardIconEmpty {
+    cursor: pointer;
+    position: absolute;
+    opacity: 1;
+    transition: opacity 250ms;
+}
+
+.cardIconFull {
+    cursor: pointer;
+    position: relative;
+    background: -webkit-linear-gradient($primary, $secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    transition: opacity $transDur;
+}
+
+.dishCard {
+    font-family: Roboto;
+    height: 4rem;
+    position: relative;
+    background-color: $dishCardBg;
+    border-radius: $cardRadius;
+    @include dishCardShadow;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    justify-content: space-between;
+    animation: loadMenu $animDur ease-in-out 1 both;
+}
+
+.dishLabel {
+    cursor: pointer;
+    border: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dishText {
+    display: flex;
+    flex-direction: column;
+    padding: .5rem 0 0 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    .dishTitle, .dishDescription {
+        padding-bottom: .2rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.dishPrice {
+    padding: 0 1rem .6rem 0;
+    display: flex;
+    align-self: flex-end;
+    transition-duration: $transDur;
+}
+
+.check {
+    position: absolute;
+    left: 100%;
+    height: 4rem;
+	width: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $tertiary;
+    transition-duration: $transDur;
+}
+
+.checkIcon {
+    font-size: $iconSize;
+    color: $lightenPolicy;
+    transition-duration: $transDur;
+}

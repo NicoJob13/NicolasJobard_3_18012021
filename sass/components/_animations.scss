@@ -1,0 +1,125 @@
+@keyframes load {
+    0% {
+        opacity: 1;
+    }
+    75% {
+        opacity: .75;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes spinner {
+    0% {
+        border-color: $primary;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    16.66% {
+        border-color: $primary;
+        opacity: 1;
+        transform: scale(1);
+    }
+    33.33% {
+        border-color: $primary;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    33.34% {
+        border-color: $secondary;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        border-color: $secondary;
+        opacity: 1;
+        transform: scale(1);
+    }
+    66.66% {
+        border-color: $secondary;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    66.67% {
+        border-color: $tertiary;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    83.33% {
+        border-color: $tertiary;
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        border-color: $tertiary;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+@keyframes loadMenu {
+    0% {
+        transform: translateY(1rem);
+        opacity: 0;
+    }
+    35% {
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.appearDelay1 {
+    animation-delay: 150ms;
+}
+
+.appearDelay2 {
+    animation-delay: 400ms;
+}
+
+.appearDelay3 {
+    animation-delay: 650ms;
+}
+
+.appearDelay4 {
+    animation-delay: 900ms;
+}
+
+.appearDelay5 {
+    animation-delay: 1150ms;
+}
+
+.appearDelay6 {
+    animation-delay: 1400ms;
+}
+
+.appearDelay7 {
+    animation-delay: 1650ms;
+}
+
+.appearDelay8 {
+    animation-delay: 1900ms;
+}
+
+.appearDelay9 {
+    animation-delay: 2150ms;
+}
+
+.appearDelay10 {
+    animation-delay: 2400ms;
+}
+
+.appearDelay11 {
+    animation-delay: 2650ms;
+}
+
+.appearDelay12 {
+    animation-delay: 2900ms;
+}
+
+.appearDelay13 {
+    animation-delay: 3150ms;
+}

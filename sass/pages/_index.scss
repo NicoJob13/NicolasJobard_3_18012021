@@ -1,0 +1,122 @@
+.searchZone {
+    position: relative;
+    z-index: 2;
+    background-color: $lightGrey;
+}
+
+.location {
+    height: 4rem;
+    background-color: $grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.locationSearchBar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.locationInput {
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $grey;
+    border: none;
+    font-weight: bold;
+    text-align: center;
+    &:focus {
+        @include inputFocus;
+    }
+}
+
+.searchSubmission {
+    padding: $sectionPadding;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: Roboto;
+    h2 {
+        font-size: 1.1rem;
+        font-weight: normal;
+    }
+}
+
+.operationInfo {
+    padding: $sectionPadding;
+    h2 {
+        font-family: Roboto;
+    }
+}
+
+.processCardGroup {
+    padding: 0 1rem;
+    display: grid;
+    row-gap: 1.5rem;
+    @media screen and (min-width: 800px) {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 3rem;
+    }
+}
+
+.processCard {
+    height: 4rem;
+    background-color: $lightGrey;
+    border-radius: $cardRadius;
+    @include shadowButton;
+    display: flex;
+    align-items: center;
+    transition: background-color $transDur, box-shadow $transDur, filter $transDur;
+    &:hover {
+        background-color: lighten($primary, 32%);
+        @include shadowButtonHover;
+        cursor: default;
+        .processIcon {
+            color: $primary;
+        }
+    }
+}
+
+.processStep {
+    margin-right: 1.5rem;
+    margin-left: -.9rem;
+    height: 1.8rem;
+    width: 1.8rem;
+    border-radius: 3rem;
+    color: $lightenPolicy;
+    background-color: $primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.processIcon {
+    margin-right: 1.5rem;
+    color: $darkGrey;
+}
+
+.processText {
+    font-weight: 500;
+}
+
+.searchResults {
+    background-color: $lightGrey;
+    padding: $sectionPadding;
+    h2 {
+        font-family: Roboto;
+    }
+    .cardGroup {
+        display: grid;
+        row-gap: 2rem;
+        @media screen and (min-width: 800px) {
+            grid-template-columns: 1fr 1fr;
+            column-gap: 2rem;
+        }
+        @media screen and (min-width: 1280px) {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            column-gap: 1.5rem;
+        }
+    }
+}
