@@ -26,6 +26,7 @@
     border: none;
     font-weight: bold;
     text-align: center;
+
     &:focus {
         @include inputFocus;
     }
@@ -38,6 +39,7 @@
     align-items: center;
     text-align: center;
     font-family: Roboto;
+
     h2 {
         font-size: 1.1rem;
         font-weight: normal;
@@ -46,6 +48,7 @@
 
 .operationInfo {
     padding: $sectionPadding;
+
     h2 {
         font-family: Roboto;
     }
@@ -55,7 +58,8 @@
     padding: 0 1rem;
     display: grid;
     row-gap: 1.5rem;
-    @media screen and (min-width: 800px) {
+
+    @media screen and (min-width: $tabletWidth) {
         grid-template-columns: repeat(3, 1fr);
         column-gap: 3rem;
     }
@@ -69,10 +73,12 @@
     display: flex;
     align-items: center;
     transition: background-color $transDur, box-shadow $transDur, filter $transDur;
+
     &:hover {
         background-color: lighten($primary, 32%);
         @include shadowButtonHover;
         cursor: default;
+
         .processIcon {
             color: $primary;
         }
@@ -104,17 +110,21 @@
 .searchResults {
     background-color: $lightGrey;
     padding: $sectionPadding;
+
     h2 {
         font-family: Roboto;
     }
+
     .cardGroup {
         display: grid;
         row-gap: 2rem;
-        @media screen and (min-width: 800px) {
+
+        @media screen and (min-width: $tabletWidth) {
             grid-template-columns: 1fr 1fr;
             column-gap: 2rem;
         }
-        @media screen and (min-width: 1280px) {
+
+        @media screen and (min-width: $desktopWidth) {
             grid-template-columns: 1fr 1fr 1fr 1fr;
             column-gap: 1.5rem;
         }

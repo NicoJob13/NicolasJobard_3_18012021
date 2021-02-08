@@ -2,9 +2,11 @@
     0% {
         opacity: 1;
     }
+
     75% {
-        opacity: .75;
+        opacity: 1;
     }
+
     100% {
         opacity: 0;
         visibility: hidden;
@@ -17,41 +19,49 @@
         opacity: 0;
         transform: scale(0.5);
     }
+
     16.66% {
         border-color: $primary;
         opacity: 1;
         transform: scale(1);
     }
+
     33.33% {
         border-color: $primary;
         opacity: 0;
         transform: scale(0.5);
     }
+
     33.34% {
         border-color: $secondary;
         opacity: 0;
         transform: scale(0.5);
     }
+
     50% {
         border-color: $secondary;
         opacity: 1;
         transform: scale(1);
     }
+
     66.66% {
         border-color: $secondary;
         opacity: 0;
         transform: scale(0.5);
     }
+
     66.67% {
         border-color: $tertiary;
         opacity: 0;
         transform: scale(0.5);
     }
+
     83.33% {
         border-color: $tertiary;
         opacity: 1;
         transform: scale(1);
     }
+
     100% {
         border-color: $tertiary;
         opacity: 0;
@@ -64,9 +74,11 @@
         transform: translateY(1rem);
         opacity: 0;
     }
+
     35% {
         transform: translateY(0);
     }
+
     100% {
         opacity: 1;
     }

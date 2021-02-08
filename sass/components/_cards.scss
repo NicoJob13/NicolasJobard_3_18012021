@@ -6,10 +6,12 @@
     display: flex;
     flex-direction: column;
     @include shadowCard;
-    @media screen and (min-width: 500px) {
+
+    @media screen and (min-width: $phabletWidth) {
         height: 20rem;
     }
-    @media screen and (min-width: 750px) {
+
+    @media screen and (min-width: $tabletWidth) {
         height: 22rem;
     }
 }
@@ -18,19 +20,21 @@
     position: relative;
     height: 11rem;
     width: 100%;
-    border-radius: 1rem 1rem 0 0;
+    border-radius: $cardPictureRadius;
     display: flex;
     overflow: hidden;
-    @media screen and (min-width: 500px) {
+
+    @media screen and (min-width: $phabletWidth) {
         height: 16rem;
     }
-    @media screen and (min-width: 750px) {
+
+    @media screen and (min-width: $tabletWidth) {
         height: 18rem;
     }
 }
 
 .cardPictureContainer:hover .cardPicture {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .cardPicture {
@@ -38,25 +42,32 @@
     width: 100%;
     object-fit: cover;
     transition: $transDur ease-out;
+
     &.cardPicture1 {
         object-position: 0% 85%;
     }
+
     &.cardPicture2 {
         object-position: 0% 61%;
     }
+
     &.cardPicture3 {
         object-position: 0% 95%;
     }
+
     &.cardPicture4 {
         object-position: 0% 90%;
     }
-    @media screen and (min-width: 1280px) {
+
+    @media screen and (min-width: $desktopWidth) {
         &.cardPicture1 {
             object-position: 40% 85%;
         }
+
         &.cardPicture3 {
             object-position: 20% 95%;
         }
+
         &.cardPicture4 {
             object-position: 40% 90%;
         }
@@ -86,6 +97,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     h3 {
         font-family: Roboto;
     }
@@ -94,6 +106,7 @@
 .cardTitle {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .cardIcon {
@@ -104,28 +117,38 @@
 
 .checkBox {
     position: absolute;
-    &:checked ~.heartLabel {
+    z-index: 100;
+    opacity: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+
+    &:checked~.heartLabel {
         .cardIconEmpty {
             opacity: 0;
         }
+
         .cardIconFull {
             opacity: 1;
         }
     }
-    &:checked ~.dishPrice {
+
+    &:checked~.dishPrice {
         transform: translateX(-4rem);
         margin-left: 4.5rem;
     }
-    &:checked ~.check {
+
+    &:checked~.check {
         transform: translateX(-100%);
     }
-    &:checked ~.check > i {
+
+    &:checked~.check>i {
         transform: rotate(360deg);
     }
 }
 
 .cardIconEmpty {
-    cursor: pointer;
     position: absolute;
     opacity: 1;
     transition: opacity 250ms;
@@ -156,21 +179,16 @@
     animation: loadMenu $animDur ease-in-out 1 both;
 }
 
-.dishLabel {
-    cursor: pointer;
-    border: none;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
 .dishText {
     display: flex;
     flex-direction: column;
     padding: .5rem 0 0 1rem;
     white-space: nowrap;
     overflow: hidden;
-    .dishTitle, .dishDescription {
+
+    .dishTitle,
+    .dishDescription {
+        font-family: Roboto;
         padding-bottom: .2rem;
         white-space: nowrap;
         overflow: hidden;
@@ -189,7 +207,7 @@
     position: absolute;
     left: 100%;
     height: 4rem;
-	width: 4rem;
+    width: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;

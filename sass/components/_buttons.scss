@@ -8,27 +8,32 @@
     justify-content: center;
     align-items: center;
     transition: box-shadow $transDur, filter $transDur;
+
     &.geoButton {
         width: 3rem;
         background-color: $grey;
         margin-right: .5rem;
         font-size: $iconSize;
     }
+
     &.searchButton {
         background: linear-gradient(to bottom right, $secondary, 45%, $primary);
         color: $lightenPolicy;
         @include shadowButton;
     }
+
     &.validationButton {
         background: linear-gradient(to bottom right, $secondary, 45%, $primary);
         color: $lightenPolicy;
         @include shadowButton;
     }
+
     &:hover {
         cursor: pointer;
         filter: brightness(110%);
         @include shadowButtonHover;
     }
+
     &:focus {
         outline-style: none;
     }

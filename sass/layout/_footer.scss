@@ -6,7 +6,8 @@
 
 .footerTitle {
     display: flex;
-    @media screen and (min-width: 800px) {
+
+    @media screen and (min-width: $tabletWidth) {
         justify-content: center;
     }
 }
@@ -14,7 +15,8 @@
 .footerContent {
     display: flex;
     flex-direction: column;
-    @media screen and (min-width: 800px) {
+
+    @media screen and (min-width: $tabletWidth) {
         justify-content: center;
         flex-direction: row;
     }
@@ -24,7 +26,8 @@
     color: $lightenPolicy;
     display: flex;
     line-height: 1.7rem;
-    @media screen and (min-width: 800px) {
+
+    @media screen and (min-width: $tabletWidth) {
         margin: 0 1rem;
     }
 }

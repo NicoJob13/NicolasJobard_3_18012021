@@ -4,7 +4,8 @@
     height: 20rem;
     width: 100%;
     object-fit: cover;
-    @media screen and (min-width: 800px) {
+
+    @media screen and (min-width: $tabletWidth) {
         height: 30rem;
     }
 }
@@ -25,7 +26,8 @@
     justify-content: space-between;
     align-items: baseline;
     padding: 0 .5rem;
-    @media screen and (min-width: 1280px) {
+
+    @media screen and (min-width: $desktopWidth) {
         padding: 0 1rem;
     }
 }
@@ -34,7 +36,8 @@
     display: grid;
     row-gap: 1rem;
     padding: 0 .5rem;
-    @media screen and (min-width: 1280px) {
+
+    @media screen and (min-width: $desktopWidth) {
         grid-template-columns: repeat(3, 1fr);
         column-gap: 2rem;
         padding: 0 1rem;
@@ -47,6 +50,7 @@
     font-weight: normal;
     text-transform: uppercase;
     padding: .3rem 0;
+
     &::after {
         content: "";
         position: absolute;

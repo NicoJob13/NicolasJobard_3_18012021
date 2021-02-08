@@ -1,9 +1,13 @@
-h1, h2, h3, h4 {
-    font: 'Shrikhand', sans-serif;
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Shrikhand', sans-serif;
     margin: 0;
 }
 
-h1, h2 {
+h1,
+h2 {
     padding-bottom: 1rem;
 }
 
@@ -23,7 +27,9 @@ h4 {
     font-size: 1.1rem;
 }
 
-p, span, img {
+p,
+span,
+img {
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
 }

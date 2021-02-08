@@ -21,8 +21,14 @@ $sectionPadding : 2rem 1rem;
 
 $buttonRadius: 2rem;
 $cardRadius: 1rem;
+$cardPictureRadius: 1rem 1rem 0 0;
 $stickerRadius: .16rem;
 
 $transDur: 1000ms;
 $animDur: 2000ms;
 $loadDur: 3000ms;
+
+$phabletWidth: 500px;
+$tabletWidth: 750px;
+$desktopWidth: 1280px;
+$maxWidth: 1440px;
