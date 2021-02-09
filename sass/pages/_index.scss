@@ -1,10 +1,17 @@
-.searchZone {
+/*******************************************************
+*Blocs présents sur la page d'accueil uniquement********
+*******************************************************/ 
+
+/*Zone de recherche***
+*********************/
+
+.searchZone {/*z-index < à celui du header pour l'effet de chevauchement du header*/
     position: relative;
     z-index: 2;
     background-color: $lightGrey;
 }
 
-.location {
+.location {/*Bandeau de localisation*/
     height: 4rem;
     background-color: $grey;
     display: flex;
@@ -27,12 +34,12 @@
     font-weight: bold;
     text-align: center;
 
-    &:focus {
+    &:focus {/*Comportement au focus (border et zone de saisie)*/
         @include inputFocus;
     }
 }
 
-.searchSubmission {
+.searchSubmission {/*Zone de validation de la recherche*/
     padding: $sectionPadding;
     display: flex;
     flex-direction: column;
@@ -46,6 +53,9 @@
     }
 }
 
+/*Zone de présentation du process de commande**
+***********************************************/
+
 .operationInfo {
     padding: $sectionPadding;
 
@@ -54,6 +64,7 @@
     }
 }
 
+/*Groupe en grid pour disposition*/
 .processCardGroup {
     padding: 0 1rem;
     display: grid;
@@ -65,7 +76,8 @@
     }
 }
 
-.processCard {
+/*Cards en flex pour gérer facilement le positionnement des différents éléments à l'aide notamment du margin*/
+.processCard {/*Propriétés de la card et notamment de la transition intervenant au hover*/
     height: 4rem;
     background-color: $lightGrey;
     border-radius: $cardRadius;
@@ -74,7 +86,7 @@
     align-items: center;
     transition: background-color $transDur, box-shadow $transDur, filter $transDur;
 
-    &:hover {
+    &:hover {/*Effet au hover*/
         background-color: lighten($primary, 32%);
         @include shadowButtonHover;
         cursor: default;
@@ -85,7 +97,7 @@
     }
 }
 
-.processStep {
+.processStep {/*Numéro de l'étape dans une div ronde avec chevaument par margin-left négatif*/
     margin-right: 1.5rem;
     margin-left: -.9rem;
     height: 1.8rem;
@@ -98,7 +110,7 @@
     align-items: center;
 }
 
-.processIcon {
+.processIcon {/*Icône associée à l'étape*/
     margin-right: 1.5rem;
     color: $darkGrey;
 }
@@ -107,6 +119,8 @@
     font-weight: 500;
 }
 
+/*Zone de résultat de recherche, présentant les restaurants**
+*************************************************************/
 .searchResults {
     background-color: $lightGrey;
     padding: $sectionPadding;
@@ -115,7 +129,7 @@
         font-family: Roboto;
     }
 
-    .cardGroup {
+    .cardGroup {/*Galerie en grid avec paramétrage des différents displays*/
         display: grid;
         row-gap: 2rem;
 

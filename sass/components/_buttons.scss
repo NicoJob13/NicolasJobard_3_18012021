@@ -1,4 +1,8 @@
-.button {
+/*******************************************************
+*Conception et paramétrages des boutons du site*********
+*******************************************************/ 
+
+.button {/*Propriétés communes*/
     height: 3rem;
     padding: 1rem;
     border: none;
@@ -9,6 +13,7 @@
     align-items: center;
     transition: box-shadow $transDur, filter $transDur;
 
+    /*Propriété spécifiques à certains boutons*/
     &.geoButton {
         width: 3rem;
         background-color: $grey;
@@ -28,13 +33,13 @@
         @include shadowButton;
     }
 
-    &:hover {
+    &:hover {/*Comportement au hover*/
         cursor: pointer;
         filter: brightness(110%);
         @include shadowButtonHover;
     }
 
-    &:focus {
+    &:focus {/*Comportement au hover pour enlever le cadre sur les navigateurs basés sur chromium*/
         outline-style: none;
     }
 }

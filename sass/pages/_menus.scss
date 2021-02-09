@@ -1,4 +1,8 @@
-.restaurantPicture {
+/*******************************************************
+*Blocs présents sur les pages menus uniquement**********
+*******************************************************/ 
+
+.restaurantPicture {/*z-index < à celui de restaurantContent pour permettre le positionnement en chevauchement*/
     position: relative;
     z-index: 1;
     height: 20rem;
@@ -10,7 +14,7 @@
     }
 }
 
-.restaurantContent {
+.restaurantContent {/*z-index > à celui de restaurantPicture pour permettre le positionnement en chevauchement via un margin-top négatif*/
     position: relative;
     z-index: 9999;
     background-color: $grey;
@@ -21,7 +25,7 @@
     row-gap: 2rem;
 }
 
-.restaurantTitle {
+.restaurantTitle {/*div contenant le nom du restaurant et l'icône de favori*/
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -32,7 +36,7 @@
     }
 }
 
-.restaurantMenu {
+.restaurantMenu {/*Galerie des plats, en grid avec paramétrage des différents displays*/
     display: grid;
     row-gap: 1rem;
     padding: 0 .5rem;
@@ -44,7 +48,7 @@
     }
 }
 
-.menuTitle {
+.menuTitle {/*Titre de partie de menu, en position relative pour le ::after qui suit*/
     position: relative;
     font-family: Roboto;
     font-weight: normal;
@@ -62,13 +66,13 @@
     }
 }
 
-.dishList {
+.dishList {/*Liste des plats d'une partie de menu, en grid*/
     padding: 1rem 0;
     display: grid;
     row-gap: 1.2rem;
 }
 
-.orderValidation {
+.orderValidation {/*Zone de validation de la commande*/
     background-color: $grey;
     display: flex;
     justify-content: center;

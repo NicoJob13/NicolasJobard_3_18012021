@@ -1,3 +1,4 @@
+//Couleurs
 $primary: #9356dc;
 $secondary: #ff79da;
 $tertiary: #99e2d0;
@@ -14,20 +15,25 @@ $dishCardBg: white;
 $lightenPolicy: whitesmoke;
 $linkColor: black;
 
+//Tailles de polices sur éléments
 $iconSize: 1.3rem;
 $buttonFontSize: 1.1rem;
 
+//Paddings et margins
 $sectionPadding : 2rem 1rem;
 
+//Radius appliqués au éléments
 $buttonRadius: 2rem;
 $cardRadius: 1rem;
 $cardPictureRadius: 1rem 1rem 0 0;
 $stickerRadius: .16rem;
 
+//Durées des transitions et animations
 $transDur: 1000ms;
 $animDur: 2000ms;
 $loadDur: 3000ms;
 
+//Breakpoints et max-widths
 $phabletWidth: 500px;
 $tabletWidth: 750px;
 $desktopWidth: 1280px;

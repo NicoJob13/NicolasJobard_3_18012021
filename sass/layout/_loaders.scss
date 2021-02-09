@@ -1,4 +1,8 @@
-.load {
+/******************************************************************
+*Paramétrage des différentes div utilisées pour le loading spinner*
+******************************************************************/ 
+
+.load {/*Position absolute et z-index élevé pour passer sur le content, et durée de l'animation; en flex pour positionner*/
     position: absolute;
     z-index: 9999;
     height: 100%;
@@ -10,7 +14,7 @@
     animation: load $loadDur ease-in-out 1 forwards;
 }
 
-.loadingSpinner {
+.loadingSpinner {/*En flex pour positionner et avec les propriétés appliquées à l'animation*/
     display: flex;
     justify-content: center;
     border-radius: 50%;

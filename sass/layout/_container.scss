@@ -1,10 +1,13 @@
-.content {
+/*Paramétrage des containers principaux*
+***************************************/
+
+.content {/*Container du contenu du la page d'index, nécessaire pour le bon fonctionnement du loading spinner*/
     position: relative;
     z-index: 1;
     display: block;
 }
 
-.container {
+.container {/*Container destiné à limiter la width du contenu sur la version desktop*/
     max-width: $maxWidth;
     margin: auto;
     box-sizing: border-box;

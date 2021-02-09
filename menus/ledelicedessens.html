@@ -12,37 +12,37 @@
 
 <body>
     <header>
-        <div class="header">
+        <div class="header"><!--Entête contenant le logo de la société et une flèche de retour à l'accueil du site-->
             <a href="../index.html"><i class="fas fa-arrow-left"></i></a>
             <div class="logo">
                 <img src="../images/logo/ohmyfood@2x.svg"
                     alt="Logo représentant le nom Ohmyfood écrit en caractères arrondis" class="logo">
             </div>
         </div>
-    </header>
-    <main>
-        <div>
+    </header><!--Fin de l'entête-->
+    <main><!--Contenu principal de la page, contenant une photo d'un plat du restaurant, une section présentant le menu et un bouton de commande-->
+        <div><!--Photo d'un plat du restaurant-->
             <img class="restaurantPicture"
                 src="../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
                 alt="photographie d'une assiette rectangulaire blanche aux bords gris, contenant un filet de poisson accompagné de petits légumes du soleil">
         </div>
-        <section class="container restaurantContent">
-            <div class="restaurantTitle">
+        <section class="container restaurantContent"><!--Zone contenant le nom du restaurant, une icône de favori et le menu-->
+            <div class="restaurantTitle"><!--Zone de titre gérée en CSS-Flexbox-->
                 <h1>Le délice des sens</h1>
-                <div class="cardIcon">
-                    <input type="checkbox" class="checkBox" name="checkHeart" id="heart" hidden>
+                <div class="cardIcon"><!--Icône de favori clicable-->
+                    <input type="checkbox" class="checkBox" name="checkHeart" id="heart" hidden><!--Input de type checkbox pour gérer le click permettant la coloration de l'icône en utilisant deux icônes-->
                     <label class="heartLabel" for="heart">
                         <i class="fa-2x far fa-heart cardIconEmpty"></i>
                         <i class="fa-2x fas fa-heart cardIconFull"></i>
                     </label>
-                </div>
-            </div>
-            <div class="restaurantMenu">
-                <div class="menuStarters">
-                    <h2 class="appearDelay1 menuTitle">Entrées</h2>
-                    <div class="dishList">
-                        <div class="appearDelay2 dishCard">
-                            <input type="checkbox" class="checkBox" name="checkBox" id="starter1">
+                </div><!--Fin icône de favori-->
+            </div><!--Fin zone de titre-->
+            <div class="restaurantMenu"><!--Zone de menu, divisée en 3 parties, Entrées, Plats, Desserts, gérée en CSS-Grid-->
+                <div class="menuStarters"><!--Partie Entrées-->
+                    <h2 class="menuTitle">Entrées</h2>
+                    <div class="dishList"><!--Liste Entrées - Chaque liste est gérée en CSS-Grid; Chaque plat est affecté d'une class appearDelay"n" pour l'animation-->
+                        <div class="appearDelay1 dishCard"><!--Card d'entrée 1-->
+                            <input type="checkbox" class="checkBox" name="checkBox" id="starter1"><!--Chaque card est gérée en CSS-FlexBox; Chaque plat est affecté d'un input permettant le click, d'un texte, d'un prix et d'une boîte de confirmation-->
                             <div class="dishText">
                                 <h3 class="dishTitle">Tartare de thon</h3>
                                 <span class="dishDescription">Assaisonné au yuzu</span>
@@ -51,8 +51,8 @@
                             <div class="check">
                                 <i class="fas fa-check-circle checkIcon"></i>
                             </div>
-                        </div>
-                        <div class="appearDelay3 dishCard">
+                        </div><!--Fin de card d'entrée 1-->
+                        <div class="appearDelay2 dishCard"><!--Card d'entrée 2-->
                             <input type="checkbox" class="checkBox" name="checkBox" id="starter2">
                             <div class="dishText">
                                 <h3 class="dishTitle">Bouchée de homard croustillant</h3>
@@ -62,8 +62,8 @@
                             <div class="check">
                                 <i class="fas fa-check-circle checkIcon"></i>
                             </div>
-                        </div>
-                        <div class="appearDelay4 dishCard">
+                        </div><!--Fin de card d'entrée 2-->
+                        <div class="appearDelay3 dishCard"><!--Card d'entrée 3-->
                             <input type="checkbox" class="checkBox" name="checkBox" id="starter3">
                             <div class="dishText">
                                 <h3 class="dishTitle">Velouté de cèpes</h3>
@@ -73,13 +73,13 @@
                             <div class="check">
                                 <i class="fas fa-check-circle checkIcon"></i>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="menuDishes">
-                    <h2 class="appearDelay5 menuTitle">Plats</h2>
-                    <div class="dishList">
-                        <div class="appearDelay6 dishCard">
+                        </div><!--Fin de card d'entrée 3-->
+                    </div><!--Fin de liste Entrées-->
+                </div><!--Fin de la partie Entrées-->
+                <div class="menuDishes"><!--Partie Plats-->
+                    <h2 class="menuTitle">Plats</h2>
+                    <div class="dishList"><!--Liste Plats-->
+                        <div class="appearDelay4 dishCard"><!--Card de plat 1-->
                             <input type="checkbox" class="checkBox" name="checkBox" id="mainDish1">
                             <div class="dishText">
                                 <h3 class="dishTitle">Poulet rôti aux herbes de Provence</h3>
@@ -89,8 +89,8 @@
                             <div class="check">
                                 <i class="fas fa-check-circle checkIcon"></i>
                             </div>
-                        </div>
-                        <div class="appearDelay7 dishCard">
+                        </div><!--Fin de card de plat 1-->
+                        <div class="appearDelay5 dishCard"><!--Card de plat 2-->
                             <input type="checkbox" class="checkBox" name="checkBox" id="mainDish2">
                             <div class="dishText">
                                 <h3 class="dishTitle">Langouste rôtie</h3>
@@ -100,8 +100,8 @@
                             <div class="check">
                                 <i class="fas fa-check-circle checkIcon"></i>
                             </div>
-                        </div>
-                        <div class="appearDelay8 dishCard">
+                        </div><!--Fin de card de plat 2-->
+                        <div class="appearDelay6 dishCard"><!--Card de plat 3-->
                             <input type="checkbox" class="checkBox" name="checkBox" id="mainDish3">
                             <div class="dishText">
                                 <h3 class="dishTitle">Côte de boeuf Angus</h3>
@@ -111,13 +111,13 @@
                             <div class="check">
                                 <i class="fas fa-check-circle checkIcon"></i>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="menuDesserts">
-                    <h2 class="appearDelay9 menuTitle">Desserts</h2>
-                    <div class="dishList">
-                        <div class="appearDelay10 dishCard">
+                        </div><!--Fin de card de plats 3-->
+                    </div><!--Fin Liste Plats-->
+                </div><!--Fin partie Plats-->
+                <div class="menuDesserts"><!--Partie Desserts-->
+                    <h2 class="menuTitle">Desserts</h2>
+                    <div class="dishList"><!--Liste Desserts-->
+                        <div class="appearDelay7 dishCard"><!--Card de dessert 1-->
                             <input type="checkbox" class="checkBox" name="checkBox" id="dessert1">
                             <div class="dishText">
                                 <h3 class="dishTitle">Farandole de desserts</h3>
@@ -127,8 +127,8 @@
                             <div class="check">
                                 <i class="fas fa-check-circle checkIcon"></i>
                             </div>
-                        </div>
-                        <div class="appearDelay11 dishCard">
+                        </div><!--Fin de card de dessert 1-->
+                        <div class="appearDelay8 dishCard"><!--Card de dessert 2-->
                             <input type="checkbox" class="checkBox" name="checkBox" id="dessert2">
                             <div class="dishText">
                                 <h3 class="dishTitle">Crème brulée</h3>
@@ -138,8 +138,8 @@
                             <div class="check">
                                 <i class="fas fa-check-circle checkIcon"></i>
                             </div>
-                        </div>
-                        <div class="appearDelay12 dishCard">
+                        </div><!--Fin de card de dessert 2-->
+                        <div class="appearDelay9 dishCard"><!--Card de dessert 3-->
                             <input type="checkbox" class="checkBox" name="checkBox" id="dessert3">
                             <div class="dishText">
                                 <h3 class="dishTitle">Tiramisu</h3>
@@ -149,18 +149,18 @@
                             <div class="check">
                                 <i class="fas fa-check-circle checkIcon"></i>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div class="container orderValidation">
+                        </div><!--Fin de card de dessert 3-->
+                    </div><!--Fin Liste Desserts-->
+                </div><!--Fin partie Desserts-->
+            </div><!--Fin zone de menu-->
+        </section><!--Fin zone contenu restaurant-->
+        <div class="container orderValidation"><!--Section de validation de la commande contenant un bouton-->
             <div>
                 <button class="button validationButton">Commander</button>
             </div>
-        </div>
-    </main>
-    <footer>
+        </div><!--Fin de la section de validation de commande-->
+    </main><!--Fin du contenu principal de la page-->
+    <footer><!--Pied de page contenant divers liens-->
         <section class="footer">
             <div class="container">
                 <div class="footerTitle">
@@ -188,7 +188,7 @@
                             Mentions légales
                         </span>
                     </a>
-                    <a class="footerLink" href="mailto:contact@ohmyfood.com">
+                    <a class="footerLink" href="mailto:contact@ohmyfood.com"><!--lien de contact ouvrant le client de messagerie du visiteur-->
                         <span>
                             Contact
                         </span>
@@ -196,7 +196,7 @@
                 </div>
             </div>
         </section>
-    </footer>
+    </footer><!--Fin du bien de page-->
 </body>
 
 </html>

@@ -1,4 +1,8 @@
-.header {
+/*******************************************************
+*Conception et paramétrages du header*******************
+*******************************************************/ 
+
+.header {/*En grid pour le positionnement et avec un z-index pour passer le box-shadow au-dessus du bandeau de localisation*/
     height: 5rem;
     padding: .5rem 1rem;
     display: grid;

@@ -1,4 +1,10 @@
-.card {
+/*******************************************************
+*Conception et paramétrages des cards*******************
+*******************************************************/
+
+/*Cards de la page d'accueil**
+*****************************/
+.card {/*Container de la card*/
     height: 15rem;
     width: 100%;
     background-color: $cardBg;
@@ -16,7 +22,7 @@
     }
 }
 
-.cardPictureContainer {
+.cardPictureContainer {/*Container de la photo permettant l'effet de zoom par un scale au hover*/
     position: relative;
     height: 11rem;
     width: 100%;
@@ -33,16 +39,17 @@
     }
 }
 
-.cardPictureContainer:hover .cardPicture {
+.cardPictureContainer:hover .cardPicture {/*Scale au hover*/
     transform: scale(1.1);
 }
 
-.cardPicture {
+.cardPicture {/*L'image avec les propriétés de la transition du scale*/
     height: 100%;
     width: 100%;
     object-fit: cover;
     transition: $transDur ease-out;
 
+    /*Le positionnement des images*/
     &.cardPicture1 {
         object-position: 0% 85%;
     }
@@ -74,7 +81,7 @@
     }
 }
 
-.newSticker {
+.newSticker {/*Sticker "Nouveau"*/
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -91,7 +98,7 @@
     align-items: center;
 }
 
-.cardText {
+.cardText {/*Container du texte des cards*/
     height: 4rem;
     padding: 0 1rem;
     display: flex;
@@ -103,19 +110,21 @@
     }
 }
 
-.cardTitle {
+.cardTitle {/*Titre de la carte avec une width élargissant la zonne de click*/
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.cardIcon {
+.cardIcon {/*Icone coeur de gestion des favoris*/
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.checkBox {
+/*Effets liés aux checkbox utilisées**
+*************************************/
+.checkBox {/*Checkbox permettant d'activer des effets au click*/
     position: absolute;
     z-index: 100;
     opacity: 0;
@@ -124,7 +133,7 @@
     width: 100%;
     cursor: pointer;
 
-    &:checked~.heartLabel {
+    &:checked~.heartLabel {/*Effet de coloration du coeur*/
         .cardIconEmpty {
             opacity: 0;
         }
@@ -134,11 +143,12 @@
         }
     }
 
-    &:checked~.dishPrice {
+    &:checked~.dishPrice {/*Translation de la div de prix*/
         transform: translateX(-4rem);
         margin-left: 4.5rem;
     }
 
+    /*Translation de la div de confirmation et rotation de l'icône qu'elle contient*/
     &:checked~.check {
         transform: translateX(-100%);
     }
@@ -148,13 +158,14 @@
     }
 }
 
+/*Coloration des coeurs*/
 .cardIconEmpty {
     position: absolute;
     opacity: 1;
     transition: opacity 250ms;
 }
 
-.cardIconFull {
+.cardIconFull {/*Application d'un dégradé au background qui est limité à la portion située sous le texte et transparence du texte (ici icône de coeur)*/
     cursor: pointer;
     position: relative;
     background: -webkit-linear-gradient($primary, $secondary);
@@ -164,7 +175,10 @@
     transition: opacity $transDur;
 }
 
-.dishCard {
+/*Les cards des plats*
+**********************/
+
+.dishCard {/*Container principal contenant...*/
     font-family: Roboto;
     height: 4rem;
     position: relative;
@@ -179,7 +193,7 @@
     animation: loadMenu $animDur ease-in-out 1 both;
 }
 
-.dishText {
+.dishText {/*...une div de texte,avec les propriétés permettant de tronquer avec ellipse,...*/
     display: flex;
     flex-direction: column;
     padding: .5rem 0 0 1rem;
@@ -196,14 +210,14 @@
     }
 }
 
-.dishPrice {
+.dishPrice {/*...une div de prix qui translate au check,...*/
     padding: 0 1rem .6rem 0;
     display: flex;
     align-self: flex-end;
     transition-duration: $transDur;
 }
 
-.check {
+.check {/*...une div de confirmation, qui translate au check et dont l'icône tourne alors*/
     position: absolute;
     left: 100%;
     height: 4rem;
