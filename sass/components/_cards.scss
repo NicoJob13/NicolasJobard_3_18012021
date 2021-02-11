@@ -127,7 +127,7 @@
 .checkBox {/*Checkbox permettant d'activer des effets au click*/
     position: absolute;
     z-index: 100;
-    opacity: 0;
+    appearance: none;
     margin: 0;
     height: 100%;
     width: 100%;
