@@ -41,7 +41,8 @@
                     <h2 class="menuTitle">Entrées</h2>
                     <div class="dishList"><!--Liste Entrées - Chaque liste est gérée en CSS-Grid; Chaque plat est affecté d'une class appearDelay"n" pour l'animation-->
                         <div class="appearDelay1 dishCard"><!--Card d'entrée 1-->
-                            <input type="checkbox" class="checkBox" name="checkBox" id="starter1"><!--Chaque card est gérée en CSS-FlexBox; Chaque plat est affecté d'un input permettant le click, d'un texte, d'un prix et d'une boîte de confirmation-->
+                            <label class="label" for="starter1"></label><!--Chaque card est gérée en CSS-FlexBox; Chaque plat est affecté d'un input permettant le click, d'un texte, d'un prix et d'une boîte de confirmation-->
+                            <input type="checkbox" class="checkBox" name="checkBox" id="starter1" hidden>
                             <div class="dishText">
                                 <h3 class="dishTitle">Ravioles de foie gras</h3>
                                 <span class="dishDescription">Accompagnés de leur crème à la truffe</span>
@@ -52,7 +53,8 @@
                             </div>
                         </div><!--Fin de card d'entrée 1-->
                         <div class="appearDelay2 dishCard"><!--Card d'entrée 2-->
-                            <input type="checkbox" class="checkBox" name="checkBox" id="starter2">
+                            <label class="label" for="starter2"></label>
+                            <input type="checkbox" class="checkBox" name="checkBox" id="starter2" hidden>
                             <div class="dishText">
                                 <h3 class="dishTitle">Caviar osciètre</h3>
                                 <span class="dishDescription">Sur blini à la farine de blé noir</span>
@@ -63,7 +65,8 @@
                             </div>
                         </div><!--Fin de card d'entrée 2-->
                         <div class="appearDelay3 dishCard"><!--Card d'entrée 3-->
-                            <input type="checkbox" class="checkBox" name="checkBox" id="starter3">
+                            <label class="label" for="starter3"></label>
+                            <input type="checkbox" class="checkBox" name="checkBox" id="starter3" hidden>
                             <div class="dishText">
                                 <h3 class="dishTitle">Homard et espuma de potiron</h3>
                                 <span class="dishDescription">Mariné aux zestes d'orange</span>
@@ -74,7 +77,8 @@
                             </div>
                         </div><!--Fin de card d'entrée 3-->
                         <div class="appearDelay4 dishCard"><!--Card d'entrée 4-->
-                            <input type="checkbox" class="checkBox" name="checkBox" id="starter4">
+                            <label class="label" for="starter4"></label>
+                            <input type="checkbox" class="checkBox" name="checkBox" id="starter4" hidden>
                             <div class="dishText">
                                 <h3 class="dishTitle">Foie gras de canard cuit entier</h3>
                                 <span class="dishDescription">Confiture de figue et pain toasté</span>
@@ -90,7 +94,8 @@
                     <h2 class="menuTitle">Plats</h2>
                     <div class="dishList"><!--Liste Plats-->
                         <div class="appearDelay5 dishCard"><!--Card de plat 1-->
-                            <input type="checkbox" class="checkBox" name="checkBox" id="mainDish1">
+                            <label class="label" for="mainDish1"></label>
+                            <input type="checkbox" class="checkBox" name="checkBox" id="mainDish1" hidden>
                             <div class="dishText">
                                 <h3 class="dishTitle">Noix de coquilles Saint-Jacques</h3>
                                 <span class="dishDescription">Sur lit de purée de céleri-rave</span>
@@ -101,7 +106,8 @@
                             </div>
                         </div><!--Fin de card de plat 1-->
                         <div class="appearDelay6 dishCard"><!--Card de plat 2-->
-                            <input type="checkbox" class="checkBox" name="checkBox" id="mainDish2">
+                            <label class="label" for="mainDish2"></label>
+                            <input type="checkbox" class="checkBox" name="checkBox" id="mainDish2" hidden>
                             <div class="dishText">
                                 <h3 class="dishTitle">Langoustine poêlée</h3>
                                 <span class="dishDescription">Purée de patate douce</span>
@@ -112,7 +118,8 @@
                             </div>
                         </div><!--Fin de card de plat 2-->
                         <div class="appearDelay7 dishCard">
-                            <input type="checkbox" class="checkBox" name="checkBox" id="mainDish3">
+                            <label class="label" for="mainDish3"></label>
+                            <input type="checkbox" class="checkBox" name="checkBox" id="mainDish3" hidden>
                             <div class="dishText">
                                 <h3 class="dishTitle">Mijoté de queue de boeuf</h3>
                                 <span class="dishDescription">Et riz sauvage aux zestes de citron</span>
@@ -128,7 +135,8 @@
                     <h2 class="menuTitle">Desserts</h2>
                     <div class="dishList"><!--Liste Desserts-->
                         <div class="appearDelay8 dishCard">
-                            <input type="checkbox" class="checkBox" name="checkBox" id="dessert1">
+                            <label class="label" for="dessert1"></label>
+                            <input type="checkbox" class="checkBox" name="checkBox" id="dessert1" hidden>
                             <div class="dishText">
                                 <h3 class="dishTitle">Macaron noisette et chocolat</h3>
                                 <span class="dishDescription">Glace au caramel brun et sel de Guérande</span>
@@ -139,7 +147,8 @@
                             </div>
                         </div>
                         <div class="appearDelay9 dishCard">
-                            <input type="checkbox" class="checkBox" name="checkBox" id="dessert2">
+                            <label class="label" for="dessert2"></label>
+                            <input type="checkbox" class="checkBox" name="checkBox" id="dessert2" hidden>
                             <div class="dishText">
                                 <h3 class="dishTitle">Baba au rhum revisité</h3>
                                 <span class="dishDescription">Avec son coulis de citron</span>
@@ -150,7 +159,8 @@
                             </div>
                         </div>
                         <div class="appearDelay10 dishCard">
-                            <input type="checkbox" class="checkBox" name="checkBox" id="dessert3">
+                            <label class="label" for="dessert3"></label>
+                            <input type="checkbox" class="checkBox" name="checkBox" id="dessert3" hidden>
                             <div class="dishText">
                                 <h3 class="dishTitle">Tarte au citron meringuée</h3>
                                 <span class="dishDescription">Déstructurée</span>

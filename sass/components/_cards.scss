@@ -124,14 +124,16 @@
 
 /*Effets liés aux checkbox utilisées**
 *************************************/
-.checkBox {/*Checkbox permettant d'activer des effets au click*/
+.label {
     position: absolute;
     z-index: 100;
-    appearance: none;
-    margin: 0;
     height: 100%;
     width: 100%;
     cursor: pointer;
+}
+
+.checkBox {/*Checkbox permettant d'activer des effets au click*/
+    position: absolute;
 
     &:checked~.heartLabel {/*Effet de coloration du coeur*/
         .cardIconEmpty {
